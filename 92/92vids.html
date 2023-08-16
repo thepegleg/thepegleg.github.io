@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Video Platform</title>
+  <style>
+    .player {
+      width: 640px;
+      height: 360px;
+      background-color: black;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+<a href="https://sebastian-92.github.io/92vids/about">About</a>
+  <div class="player"></div>
+
+  <div>
+    <button onclick="playVideo(0, 'https://ia600704.us.archive.org/32/items/Monty.Python.And.The.Holy.Grail.1975.720p.BluRay.x264YTS.AM/Monty.Python.And.The.Holy.Grail.1975.720p.BluRay.x264-%5BYTS.AM%5D.mp4')">Monty Python and the holy grail</button>
+    <button onclick="playVideo(0, 'https://ia601408.us.archive.org/24/items/hd-it-is-the-great-pumpkin-charlie-brown-1966/%5BHD%5D%20IT%20IS%20THE%20GREAT%20PUMPKIN%20CHARLIE%20BROWN%20%281966%29.mp4')">Charlie brown halloween</button>
+    <button onclick="playVideo(0, 'https://ia801500.us.archive.org/19/items/the-terminator-1984_202206/The%20Terminator%20%281984%29.mp4')">Terminator 1(fixed)</button>
+    <button onclick="playVideo(0, 'https://ia902904.us.archive.org/3/items/starwarsanewhopesaturdayfeb.14th1987cbskirotvchannel7seattlewoc/Star%20Wars%20A%20New%20Hope%20-%20Saturday%20Feb.%2014th%201987%20-%20%28CBS%29%20KIRO-TV%20Channel%207%20Seattle%20-%20W_O_C.mp4')">A New Hope</button>
+    <button onclick="playVideo(0, 'https://ia802206.us.archive.org/2/items/charlie-brown-christmas-original-airing/Charlie%20Brown%20Christmas%20Original%20Airing.mp4')">Charlie Brown christmas original airing</button>
+    
+    <button onclick="playVideo(0, 'https://drive.google.com/file/d/1NMceYQQ9eKbOJTGdnhAh9QRA7UH_dc7i/view')">coming soon</button>    
+  </div>
+
+  <script>
+    var videoPlayers = [];
+
+    function playVideo(index, videoPath) {
+      if (!videoPlayers[index]) {
+        videoPlayers[index] = document.createElement('video');
+        videoPlayers[index].src = videoPath;
+        videoPlayers[index].controls = true;
+        videoPlayers[index].autoplay = true;
+        document.getElementsByClassName('player')[index].appendChild(videoPlayers[index]);
+      } else {
+        videoPlayers[index].play();
+      }
+    }
+
+    function pauseVideo(index) {
+      if (videoPlayers[index]) {
+        videoPlayers[index].pause();
+      }
+    }
+  </script>
+</body>
+</html>
