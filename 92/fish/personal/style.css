@@ -1,0 +1,56 @@
+@font-face {
+    font-family: unifont;
+    src: url('./unifont.ttf');
+}
+body
+{
+    background-image: url("./img/bg.png");
+}
+body, html
+{
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+}
+.content
+{
+    margin-left: 20%;
+    margin-right: 20%;
+    background-color: #3f220f;
+    /*height: 100%;*/
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding: 2%;
+    padding-top: 0.5%;
+    /*border: #ffdd6c;
+    border-style: solid;
+    border-width: 5px;*/
+}
+h2
+{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 32px;
+    color: #ffba6c;
+}
+*
+{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+    color: #e0a25c;
+}
+h3
+{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 23px;
+    color: #ffba6c;
+}
+.badge
+{
+    border:1px solid white;
+    margin: 5px;
+}
+.badges
+{
+    display: flex;
+    justify-content: center;
+}

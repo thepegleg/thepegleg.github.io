@@ -1,0 +1,60 @@
+
+<meta name="description" content="Have fun with math, enjoy our student specialized calculator. Only on fishme/mediaology."/>
+<link rel="shortcut icon" href="/icon.png" type="image/png">
+<script async src="https://arc.io/widget.min.js#RqQiAHK7"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Student run information news and other media."/>
+    <title>Moss News</title>
+    <link rel="shortcut icon" href="/icon.png" type="image/png">
+    <style>
+        .embeded_content {
+            width:80%;
+            display:block;
+            border-radius:10px;
+        }
+        .sidelink
+        {
+            
+            all:unset;
+            cursor:pointer;
+            display:inline-block;
+            color:white;
+            background-color:black;
+            padding:0.5%;
+        }
+        .title
+        {
+            display:block;
+        }
+    </style>
+    
+    <script>
+        function resizeIframe(obj) {
+            obj.style.height = obj.contentWindow.document.documentElement.offsetHeight + 'px';
+            scrollY = 0
+        }
+        function home()
+        {
+            document.querySelector(".embeded_content").src="/news/map.php" 
+        }
+    </script>
+</head>
+<body>
+    <div class="sidebar">
+    </div>
+    <center class="content">
+        <a href="#" onclick="home()"><img class="title" src="/news/title.png"></a>
+        
+        
+        <iframe src="/news/map.php" frameborder="0" class="embeded_content" scrolling="no" onload="resizeIframe(this)"></iframe>
+        
+        <div>(c) FoxMoss 2023 </div>
+        <div>for site information email foxmoss@mediaology.com</div>
+    </center>
+</body>
+</html>
