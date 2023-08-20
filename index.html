@@ -3,34 +3,34 @@
 <head>
     <title>Directory</title>
     <script>
-        async function fetchRepoContents() {
-            const directoryURL = 'https://sebastian-92.github.io/'; // Replace with yer directory URL
-            const response = await fetch(directoryURL);
-            const text = await response.text();
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(text, 'text/html');
-            const pageLinksContainer = document.getElementById('page-links');
+        const pagePaths = [
+            '/',             
+            '/about',      
+            '/92vids',     
+            '/92books',      
+            '/glitch',
+            '/permutations',
+            '/grayscale',
+        ];
 
-            const links = doc.querySelectorAll('a');
+        function generatePageLinks() {
+            const pageLinksContainer = document.getElementById('page-links');
             pageLinksContainer.innerHTML = ''; // Clear existing links
 
-            links.forEach(link => {
-                const href = link.getAttribute('href');
-                if (href && !href.startsWith('http') && !href.startsWith('#')) {
-                    const pageLink = document.createElement('a');
-                    pageLink.href = directoryURL + href;
-                    pageLink.textContent = href;
-                    pageLinksContainer.appendChild(pageLink);
-                }
+            pagePaths.forEach(pagePath => {
+                const pageLink = document.createElement('a');
+                pageLink.href = pagePath;
+                pageLink.textContent = pagePath === '/' ? 'Home' : pagePath.slice(1); // Remove leading slash
+                pageLinksContainer.appendChild(pageLink);
             });
         }
 
         // Generate links when the page loads
-        document.addEventListener('DOMContentLoaded', fetchRepoContents);
+        document.addEventListener('DOMContentLoaded', generatePageLinks);
     </script>
 </head>
 <body>
-    <h1>Directory v3</h1>
+    <h1>Directory</h1>
     <div id="page-links"></div>
 </body>
 </html>
