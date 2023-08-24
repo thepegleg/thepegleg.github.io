@@ -6,3 +6,70 @@
 <a href="https://guest.portaportal.com/volume">list of gaming websites by volume, not all of them work (not affiliated w/ pegleg in any way)</a>
 <a href="https://littlealchemy.com">little achemy</a>
 <a href="https://thepegleg.github.io/asdjklhfskjafhakfhueoyraehfjkcnjkdscnsjakdreuoiwefh">back to atlas</a>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submit New Links</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .form-container {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      width: 320px;
+    }
+    .form-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+    .form-container label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+    }
+    .form-container input[type="url"],
+    .form-container textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-bottom: 15px;
+      resize: vertical;
+    }
+    .form-container button[type="submit"] {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+    .form-container button[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <div class="form-title">Submit new links</div>
+    <form action="https://formspree.io/f/xqkvqyoz" method="POST">
+      <label for="message">Description of new link:</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+      <label for="website">Enter a URL:</label>
+      <input type="url" id="website" name="website" required>
+      <button type="submit">Send</button>
+    </form>
+  </div>
+</body>
+</html>
+
