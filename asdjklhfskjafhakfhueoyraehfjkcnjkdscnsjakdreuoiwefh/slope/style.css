@@ -1,0 +1,184 @@
+@import url('https://fonts.cdnfonts.com/css/monument-extended');
+
+#ad-container {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999;
+  }
+  
+  #ad-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+background-image: url("BGS-circle-HD.png");    
+cursor: pointer;
+position: relative;
+background-position: center center;
+background-size: cover;
+transition: 0.2s;
+
+  }
+  #ad-circle:hover {
+    scale: 1.1;
+     transition: 0.2s;
+  }
+  #popup {
+    font-family: 'Monument Extended', sans-serif;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw;
+    height: 80vh;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.473);
+    backdrop-filter: blur(10px);
+    border: 3px solid black;
+    border-radius: 6px;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    flex-direction: column
+  }
+  
+  #close-btn {
+    margin-top: 10px;
+    position:absolute;
+    top: 2px;
+    right: 22px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-image: url("x.png");
+    background-position:  right center;
+background-size: cover;
+cursor: pointer;
+transition: 0.2s;
+
+  }
+  
+
+  #close-btn:hover {
+    scale: 1.1;
+    transition: 0.2s;
+  }
+
+
+  .h1-hero {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 3em;
+    letter-spacing: 3px;
+    color: transparent;
+    -webkit-text-stroke: white 2px;
+
+  }
+
+  .p-hero {
+    text-align: center;
+    font-style: italic;
+    
+  }
+
+  .one {
+    width: 28%;
+    height: 60vh;
+    background-color: rgb(73, 53, 23);
+    margin: 20px;
+    background-image: url("/BGS-circle-HD.png");
+    background-size: 100px 100px ;
+    background-position: center center;
+background-repeat: no-repeat; 
+border-radius: 10px;
+
+  }
+  .one:hover {
+    background-image:  url("/one.gif");
+    background-size: cover;
+    transition: 1s;
+    border-radius: 10px;
+
+  }
+  .two {
+    width: 28%;
+    height: 60vh;
+    background-color: white;
+    margin: 20px;
+    background-image: url("/2.jpg");
+    transition: 1s;
+    background-size: 100px 100px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #5865F2;
+    border-radius: 10px;
+
+  }
+  .two:hover {
+    background-image: url("/2.jpg");
+    cursor: pointer;
+    background-size: 100px 100px;
+    background-position: center;
+    transition: 1s;
+    background-repeat: repeat;
+  }
+  .three {
+    width: 28%;
+    height: 60vh;
+    background-color: rgb(39, 39, 39);
+    margin: 20px;
+    background-image: url("/BGS-circle-HD.png");
+    background-size: 100px 100px ;
+    background-position: center center;
+background-repeat: no-repeat; 
+border-radius: 10px;
+ }
+  .three:hover {
+    background-image:  url("/three.gif");
+    background-size: cover;
+    transition: 1s;
+
+  }
+
+  .unodostres {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap
+  }
+
+  h3 {
+    text-align: center;
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: uppercase;
+    padding: 10px;
+    -webkit-text-stroke: 0 rgb(0, 0, 0);
+
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  .a {
+    color: transparent;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+  }
+  .a:hover {
+    color: black;
+    backdrop-filter: blur(7px);
+
+  }
