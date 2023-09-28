@@ -1,34 +1,38 @@
 <!DOCTYPE html>
 <html>
-
+<head>
+    <title>Welcome to Atlas</title>
+    <style>
+        body {
+            background-color: darkgreen;
+            text-align: center;
+        }
+        
+        a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        #directory {
+            margin: 0 auto;
+            padding: 20px;
+            max-width: 800px;
+        }
+    </style>
+</head>
 <body>
-    <h1>Welcome to Atlas</h1>
-    <ul id="fileList"></ul>
-
-    <script>
-        // JavaScript to fetch and display the list of files
-        fetch('./')
-            .then(response => response.text())
-            .then(data => {
-                const parser = new DOMParser();
-                const htmlDoc = parser.parseFromString(data, 'text/html');
-                const links = htmlDoc.querySelectorAll('a');
-                const fileList = document.getElementById('fileList');
-
-                links.forEach(link => {
-                    const fileName = link.getAttribute('href');
-                    if (fileName !== '../' && fileName !== './') {
-                        const listItem = document.createElement('li');
-                        const linkElement = document.createElement('a');
-                        linkElement.href = fileName;
-                        linkElement.textContent = fileName;
-                        listItem.appendChild(linkElement);
-                        fileList.appendChild(listItem);
-                    }
-                });
-            })
-            .catch(error => console.error('Error:', error));
-    </script>
+    <div id="directory">
+        <h1>Welcome to Atlas</h1>
+        <ul>
+            <li><a href="mayhem/">G|_|n mayhem 2</a></li>
+            <li><a href="rooftop/">Rooftop snipers</a></li>
+            <li><a href="cookie/">cookie clicker</a></li>
+            <li><a href="slope/">slope</a></li>
+            <li><a href="ducklife3/">ducklife 3</a></li>
+            <li><a href="92vids/">92vids</a></li>
+            <!-- Add more links to files or folders as needed -->
+        </ul>
+    </div>
 </body>
 </html>
 
