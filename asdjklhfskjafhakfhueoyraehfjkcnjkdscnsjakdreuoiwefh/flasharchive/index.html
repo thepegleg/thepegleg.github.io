@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Flash Games</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand">Flash Games</a>
+        <form class="d-flex" role="search">
+          <input
+            id="search-input"
+            class="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <!-- don't do anython on click -->
+          <button
+            id="search-button"
+            class="btn btn-outline-success"
+            type="submit"
+            onclick="return false"
+          >
+            Search
+          </button>
+          <!-- Add a icon switch for changing theme -->
+          <button
+            id="themeswitch"
+            style="margin-left: 10px"
+            type="button"
+            class="btn btn-outline-secondary"
+          >
+            Light
+          </button>
+        </form>
+      </div>
+    </nav>
+    <h1 style="text-align: center; margin-top: 50px">Welcome to Flash Games</h1>
+    <!-- Add the letter buttons container -->
+    <div id="letter-buttons" class="btn-group mt-3"></div>
+
+    <!-- Add the game list container -->
+    <div id="container" class="container mt-3"></div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/theme.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
