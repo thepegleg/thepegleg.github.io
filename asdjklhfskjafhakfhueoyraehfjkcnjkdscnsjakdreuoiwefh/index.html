@@ -23,21 +23,47 @@
 <body>
     <div id="directory">
         <h1>Welcome to Atlas</h1>
+        <h2>Welcome to Atlas. Credit to whoever made these games. I took them from github.</h2>
+        <h1>Games</h1>
         <ul>
             <li><a href="mayhem/">G|_|n mayhem 2</a></li>
             <li><a href="rooftop/">Rooftop snipers</a></li>
             <li><a href="cookie/">cookie clicker</a></li>
             <li><a href="slope/">slope</a></li>
             <li><a href="ducklife3/">ducklife 3</a></li>
-      	    <li><a href="eagler/">eagler</a></li>
-      	    <li><a href="shs/">shs games, a cool gaming website (not mine)</a></li>
+      	    <li><a href="eagler/">One html file Eaglercraft. Has insane fps</a></li>
       	    <li><a href="snailbob/">snail bob</a></li>
       	    <li><a href="snailbob/2/">snail bob 2</a></li>
       	    <li><a href="snailbob/3/">sb 3</a></li>
-      	    <li><a href="flasharchive/">duplicate of a flash games website (not mine)</a></li>
+      	    <li><a href="snailbob/4/">sb 4</a></li>
+      	    <li><a href="snailbob/5/">sb 5</a></li>
       	    <li><a href="bitlife/">bitlife</a></li>
-            <!-- Add more links to files or folders as needed -->
+      	    <li><a href="eagleralt/">Regular Eaglercraft</a></li>
+      	    <li><a href="portalflash/">portal flash version</a></li>
+      	    <li><a href="1v1lol/">1v1lol</a></li>
         </ul>
+	<h1>News</h1>
+<h2>news and changelog</h2>
+    <pre id="websiteContent"></pre>
+
+    <script>
+        window.onload = function () {
+            fetchWebsiteContent();
+        };
+
+        function fetchWebsiteContent() {
+            const url = 'https://raw.githubusercontent.com/thepegleg/peglegnews/main/news.txt';
+            fetch(url)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('websiteContent').textContent = data;
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    document.getElementById('websiteContent').textContent = 'Failed to fetch website content.';
+                });
+        }
+    </script>
     </div>
 </body>
 </html>
