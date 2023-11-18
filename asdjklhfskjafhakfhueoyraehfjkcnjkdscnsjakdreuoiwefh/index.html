@@ -48,7 +48,7 @@
         </ul>
 	<h1>News</h1>
 <h2>news and changelog</h2>
-<h3 id="websiteContent" style="color: white;"></h3>
+<div id="websiteContent" style="color: white;"></div>
 <script>
     window.onload = function () {
         fetchWebsiteContent();
@@ -59,7 +59,7 @@
         fetch(url)
             .then(response => response.text())
             .then(data => {
-                document.getElementById('websiteContent').textContent = data;
+                document.getElementById('websiteContent').innerHTML = data;
             })
             .catch(error => {
                 console.error('Error:', error);
@@ -67,6 +67,7 @@
             });
     }
 </script>
+
 
     </div>
 </body>
