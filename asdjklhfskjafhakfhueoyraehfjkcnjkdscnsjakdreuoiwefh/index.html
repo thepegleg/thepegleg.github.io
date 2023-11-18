@@ -48,25 +48,26 @@
         </ul>
 	<h1>News</h1>
 <h2>news and changelog</h2>
-    <pre id="websiteContent"></pre>
-    <script>
-        window.onload = function () {
-            fetchWebsiteContent();
-        };
+<h3 id="websiteContent" style="color: white;"></h3>
+<script>
+    window.onload = function () {
+        fetchWebsiteContent();
+    };
 
-        function fetchWebsiteContent() {
-            const url = 'https://raw.githubusercontent.com/thepegleg/peglegnews/main/news.txt';
-            fetch(url)
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('websiteContent').textContent = data;
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    document.getElementById('websiteContent').textContent = 'Failed.';
-                });
-        }
-    </script>
+    function fetchWebsiteContent() {
+        const url = 'https://raw.githubusercontent.com/thepegleg/peglegnews/main/news.txt';
+        fetch(url)
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('websiteContent').textContent = data;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('websiteContent').textContent = 'Failed.';
+            });
+    }
+</script>
+
     </div>
 </body>
 </html>
