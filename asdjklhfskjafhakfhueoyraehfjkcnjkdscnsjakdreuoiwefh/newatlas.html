@@ -4,18 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dark News</title>
+    <title>thepegleg</title>
     <style>
         body {
-            background-color: #1a1a1a;
-            color: #fff;
+            background-color: #333;
+            color: #ddd;
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
         }
 
         header {
-            background-color: #333;
+            background-color: #444;
             padding: 10px;
             text-align: center;
         }
@@ -29,7 +29,7 @@
         }
 
         article {
-            border-bottom: 1px solid #444;
+            border-bottom: 1px solid #555;
             margin-bottom: 20px;
             padding-bottom: 20px;
         }
@@ -41,21 +41,51 @@
         }
 
         h2 a {
-            color: #ffa500;
+            color: #007acc;
             text-decoration: none;
         }
 
         h2 a:hover {
-            border-bottom: 1px solid #ffa500;
+            border-bottom: 1px solid #007acc;
         }
 
         p {
             line-height: 1.6;
         }
 
-        footer {
-            background-color: #333;
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #ffa500;
             color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #d48e31;
+        }
+
+        footer {
+            background-color: #444;
+            color: #ddd;
             text-align: center;
             padding: 10px;
             position: fixed;
@@ -89,6 +119,22 @@
         <article>
             <h2><a href="graveyard.html">Graveyard</a></h2>
             <p>List of useful websites that have been blocked.</p>
+        </article>
+        
+        <article>
+            <h2>Contact Us</h2>
+            <p>Want a specific tool or content on this website? Contact us:</p>
+            <form action="https://formspree.io/f/meqbggod" method="POST">
+                <label>
+                    Your email:
+                    <input type="email" name="email">
+                </label>
+                <label>
+                    Your message:
+                    <textarea name="message"></textarea>
+                </label>
+                <button type="submit">Send</button>
+            </form>
         </article>
     </main>
 
