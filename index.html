@@ -6,14 +6,11 @@
     <title>Conditional Content</title>
 </head>
 <body>
-
 <div id="contentContainer"></div>
-
 <script>
-    // Replace 'YOUR_API_ENDPOINT' with the actual API endpoint you want to fetch
-    const apiUrl = 'https://raw.githubusercontent.com/thepegleg/yesorno';
+    const apiUrl = 'https://raw.githubusercontent.com/thepegleg/yeaorna/main/?.html';
 
-    // Fetch raw data from the API
+    
     fetch(apiUrl)
         .then(response => response.text())
         .then(data => {
@@ -25,51 +22,30 @@
 
             // Update the HTML based on the condition
             if (isContentTrue) {
-                contentContainer.innerHTML = '<div id="websiteContent"></div>
-    <script>
-        window.onload = function () {
-            fetchWebsiteContent();
-        };
-
-        function fetchWebsiteContent() {
-            const url = 'https://raw.githubusercontent.com/thepegleg/thepegleg.github.io/main/open.html';
-            fetch(url)
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('websiteContent').innerHTML = data;
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    document.getElementById('websiteContent').textContent = 'Failed.';
-                });
-        }
-    </script>';
+                fetchWebsiteContent('https://raw.githubusercontent.com/thepegleg/thepegleg.github.io/main/open.html', contentContainer);
             } else {
-                contentContainer.innerHTML = '<div id="websiteContent"></div>
-    <script>
-        window.onload = function () {
-            fetchWebsiteContent();
-        };
-
-        function fetchWebsiteContent() {
-            const url = 'https://raw.githubusercontent.com/thepegleg/thepegleg.github.io/main/closed.html';
-            fetch(url)
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('websiteContent').innerHTML = data;
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    document.getElementById('websiteContent').textContent = 'Failed.';
-                });
-        }
-    </script>';
+                fetchWebsiteContent('https://raw.githubusercontent.com/thepegleg/thepegleg.github.io/main/closed.html', contentContainer);
             }
         })
         .catch(error => {
             console.error('Error fetching data:', error);
         });
+
+    function fetchWebsiteContent(url, container) {
+        fetch(url)
+            .then(response => response.text())
+            .then(data => {
+                container.innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                container.textContent = 'Failed to fetch website content.';
+            });
+    }
 </script>
+
 </body>
+</html>
+
 </html>
 
