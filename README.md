@@ -1,4 +1,4 @@
-# thepegleg - Gaming and Unblocker Website
+# thepegleg
 
 ![thepegleg Logo](favicon.ico)
 
@@ -23,7 +23,7 @@ To contribute to thepegleg, you can fork the repository and follow these simple 
    
 ## Usage
 
-Visit [thepegleg.com](https://www.thepegleg.github.io) and click on the word Atlas on the 404 page. Have fun and enjoy!
+Visit [thepegleg.github.io](https://www.thepegleg.github.io) and click on the word Atlas on the 404 page. Have fun and enjoy!
 
 ## Contributing
 
