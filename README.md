@@ -32,6 +32,7 @@ We are really, really open to contributors. Just make an issue saying what you w
 ## Credits
 
 - Project Leads: [Cbass92] [elsgcreate]
+- Project Members [A.S.T.]
 
 ## License
 
