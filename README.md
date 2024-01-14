@@ -17,8 +17,7 @@ thepegleg is a gaming website done differently. With a focus on providing unbloc
 To contribute to thepegleg, you can fork the repository and follow these simple steps:
 
 1. Fork this repository to your GitHub account.
-2. Fork our lbanana repo in your account
-3. Turn on github pages for both
+3. Turn on GitHub pages
 4. That's it!
    
 ## Usage
