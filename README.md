@@ -22,7 +22,7 @@ To make a custom access point, put this html anywhere on your website. the only 
 Put this in your bookmarks bar:
 ```javascript:(function(){var newTab = window.open('about:blank');newTab.document.write('<head><title>Classroom</title><link rel=\'icon\' type=\'image/png\' href=\'gc.png\'></head><embed allowfullscreen=\'true\' src=\'https://pegleg.cbass92.org/asdjklhfskjafhakfhueoyraehfjkcnjkdscnsjakdreuoiwefh/index.html\' style=\'position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;\'>');})()```
 
-;## Forking the Repository
+## Forking the Repository
 
 To contribute to thepegleg, you can fork the repository and follow these simple steps:
 
