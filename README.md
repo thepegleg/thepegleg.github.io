@@ -12,6 +12,11 @@ thepegleg is a gaming website done differently. With a focus on providing unbloc
 - **Open community:** Ask for whatever, and we will try our best to put it on thepegleg
 - **Really cool** The website is really cool.
 
+## How to access
+### Go to any of the following access points and follow instructions 
+- [pegleg.cbass92.org](https://pegleg.cbass92.org) click on the word Atlas on the 404 page.
+- [sciency.scienceontheweb.net](https://sciency.scienceontheweb.net) type in 69420 and click on the results in the calc.
+## More domains are coming, and a way to make your own access point.
 ## Forking the Repository
 
 To contribute to thepegleg, you can fork the repository and follow these simple steps:
@@ -19,10 +24,6 @@ To contribute to thepegleg, you can fork the repository and follow these simple 
 1. Fork this repository to your GitHub account.
 3. Turn on GitHub pages
 4. That's it!
-   
-## Usage
-
-Visit [thepegleg.github.io](https://thepegleg.github.io) and click on the word Atlas on the 404 page. Have fun and enjoy!
 
 ## Contributing
 
