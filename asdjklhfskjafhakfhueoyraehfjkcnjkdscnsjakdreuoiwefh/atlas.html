@@ -28,37 +28,63 @@
 	    <h2><a href="index.html">Home</a></h2>
         <h2>Welcome to Atlas. Credit to whoever made these. I took most of them from github.</h2>
         <h1>Games</h1>
-        <ul>
+        <ul id="gamesList">
             <a href="stickhook/">Stickman Hook</a><br>
-            <a href="mayhem/">G|_|n mayhem 2</a><br>
+            <a href="mayhem/">Gun mayhem 2</a><br>
             <a href="rooftop/">Rooftop snipers</a><br>
-            <a href="flappy/">flappy bird</a><br>
-            <a href="cookie/">cookie clicker</a><br>
-            <a href="slope/">slope</a><br>
+            <a href="flappy/">Flappy Bird</a><br>
+            <a href="cookie/">Cookie Clicker</a><br>
+            <a href="slope/">Slope</a><br>
             <a href="2048/">2048</a><br>
-            <a href="ducklife3/">ducklife 3</a><br>
-      	    <a href="eagler/">one html file Eaglercraft. Has good fps</a><br>
-      	    <a href="snailbob/">snail bob</a><br>
-      	    <a href="snailbob/2/">sb 2</a><br>
-      	    <a href="snailbob/3/">sb 3</a><br>
-      	    <a href="snailbob/4/">sb 4</a><br>
-      	    <a href="snailbob/5/">sb 5</a><br>
-            <a href="snailbob/6/">sb 6</a><br>
-            <a href="snailbob/7/">sb 7</a><br>
-            <a href="snailbob/8/">sb 8</a><br>
-      	    <a href="bitlife/">bitlife</a><br>
-      	    <a href="eagleralt/">regular Eaglercraft</a><br>
-      	    <a href="portalflash/">portal flash version</a><br>
+            <a href="ducklife3/">Duck Life 3</a><br>
+      	    <a href="eagler/">One HTML file Eaglercraft. Has good FPS</a><br>
+      	    <a href="snailbob/">Snail Bob</a><br>
+      	    <a href="snailbob/2/">Snail Bob 2</a><br>
+      	    <a href="snailbob/3/">Snail Bob 3</a><br>
+      	    <a href="snailbob/4/">Snail Bob 4</a><br>
+      	    <a href="snailbob/5/">Snail Bob 5</a><br>
+            <a href="snailbob/6/">Snail Bob 6</a><br>
+            <a href="snailbob/7/">Snail Bob 7</a><br>
+            <a href="snailbob/8/">Snail Bob 8</a><br>
+      	    <a href="bitlife/">Bitlife</a><br>
+      	    <a href="eagleralt/">Regular Eaglercraft</a><br>
+      	    <a href="portalflash/">Portal Flash Version</a><br>
       	    <a href="1v1lol/">1v1lol</a><br>
         </ul>
         <h1>Not-Games</h1>
         <ul>
             <a href="92vids/">92vids</a><br>
-      	    <a href="flashplayer.html">flash player</a><br>
-	    <a href="turbowarp.html">turbowarp packager</a><br>
-      	    <a href="thehold/">the hold -crew only</a><br>
+      	    <a href="flashplayer.html">Flash Player</a><br>
+	    <a href="turbowarp.html">TurboWarp Packager</a><br>
+      	    <a href="thehold/">The Hold - Crew Only</a><br>
         </ul>
     </div>
+
+<script>
+    // GitHub API endpoint for retrieving repository contents
+    const repoUrl = 'https://api.github.com/repos/Nailington/3kh0-assets/contents';
+
+    // Fetch repository contents using GitHub API
+    fetch(repoUrl)
+        .then(response => response.json())
+        .then(data => {
+            // Filter out folders from the response
+            const folders = data.filter(item => item.type === 'dir');
+            
+            // Iterate over each folder and create list items with links to Githack
+            const gamesList = document.getElementById('gamesList');
+            folders.forEach(folder => {
+                const link = document.createElement('a');
+                link.href = `https://rawcdn.githack.com/Nailington/3kh0-assets/aeb371b7e88542fd5e61eeed9e967a446d84fe1b/${folder.path}/`;
+                link.textContent = folder.name;
+                gamesList.appendChild(link);
+                
+                // Add line break after each link
+                gamesList.appendChild(document.createElement('br'));
+            });
+        })
+        .catch(error => console.error('Error fetching data:', error));
+</script>
+
 </body>
 </html>
-
