@@ -16,7 +16,10 @@ thepegleg is a gaming website done differently. With a focus on providing unbloc
 ### Go to any of the following access points and follow instructions 
 - [pegleg.cbass92.org](https://pegleg.cbass92.org) click on the word Atlas on the 404 page.
 - [sciency.scienceontheweb.net](https://sciency.scienceontheweb.net) type in 69420 and click on the results in the calc.
-## More domains are coming, and a way to make your own access point.
+### Custom access point
+To make a custom access point, put this html anywhere on your website. the only thing you can't edit is the link, everything else should be fine:`<a href="javascript:void(0);" onclick="var newTab = window.open('about:blank'); newTab.document.write('<head><title>Classroom</title><link rel=\'icon\' type=\'image/png\' href=\'gc.png\'></head><embed allowfullscreen=\'true\'src=\'asdjklhfskjafhakfhueoyraehfjkcnjkdscnsjakdreuoiwefh/index.html\' style=\'position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;\'>'); return false;" style="text-decoration: none;">Atlas</a>`
+### Bookmarklet
+in the morning
 ## Forking the Repository
 
 To contribute to thepegleg, you can fork the repository and follow these simple steps:
