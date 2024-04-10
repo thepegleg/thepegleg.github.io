@@ -62,7 +62,7 @@
 
 <script>
     // GitHub API endpoint for retrieving repository contents
-    const repoUrl = 'https://api.github.com/repos/Nailington/3kh0-assets/contents';
+    const repoUrl = 'https://api.github.com/repos/sebastian-92/game-assets/contents';
 
     // Fetch repository contents using GitHub API
     fetch(repoUrl)
@@ -75,7 +75,7 @@
             const gamesList = document.getElementById('gamesList');
             folders.forEach(folder => {
                 const link = document.createElement('a');
-                link.href = `https://rawcdn.githack.com/Nailington/3kh0-assets/aeb371b7e88542fd5e61eeed9e967a446d84fe1b/${folder.path}/index.html`;
+                link.href = `hhttps://raw.githack.com/sebastian-92/game-assets/folder.path}/index.html`;
                 link.textContent = folder.name;
                 gamesList.appendChild(link);
                 
