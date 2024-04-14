@@ -61,29 +61,47 @@
     </div>
 
 <script>
-    // GitHub API endpoint for retrieving repository contents
-    const repoUrl = 'https://api.github.com/repos/sebastian-92/game-assets/contents';
+// GitHub API endpoint for retrieving repository contents
+const repoUrl = 'https://api.github.com/repos/sebastian-92/game-assets/contents';
 
-    // Fetch repository contents using GitHub API
-    fetch(repoUrl)
-        .then(response => response.json())
-        .then(data => {
-            // Filter out folders from the response
-            const folders = data.filter(item => item.type === 'dir');
-            
-            // Iterate over each folder and create list items with links to Githack
-            const gamesList = document.getElementById('gamesList');
-            folders.forEach(folder => {
-                const link = document.createElement('a');
-                link.href = `https://6619c65cdc2f1f177a68f15c--jsadnlfsjdkfnasuiefnxjkncdontblockme1.netlify.app/${folder.path}/index.html`;
-                link.textContent = folder.name;
-                gamesList.appendChild(link);
-                
-                // Add line break after each link
-                gamesList.appendChild(document.createElement('br'));
-            });
-        })
-        .catch(error => console.error('Error fetching data:', error));
+// Function to sort links alphabetically
+function sortLinksAlphabetically(links) {
+    return links.sort((a, b) => a.textContent.localeCompare(b.textContent));
+}
+
+// Fetch repository contents using GitHub API
+fetch(repoUrl)
+    .then(response => response.json())
+    .then(data => {
+        // Filter out folders from the response
+        const folders = data.filter(item => item.type === 'dir');
+
+        // Retrieve existing links
+        const existingLinks = Array.from(document.querySelectorAll('#gamesList a'));
+        
+        // Create new links for the fetched folders
+        const newLinks = folders.map(folder => {
+            const link = document.createElement('a');
+            link.href = `https://6619c65cdc2f1f177a68f15c--jsadnlfsjdkfnasuiefnxjkncdontblockme1.netlify.app/${folder.path}/index.html`;
+            link.textContent = folder.name;
+            return link;
+        });
+        
+        // Combine and sort links
+        const allLinks = sortLinksAlphabetically(existingLinks.concat(newLinks));
+
+        // Clear existing list
+        const gamesList = document.getElementById('gamesList');
+        gamesList.innerHTML = '';
+
+        // Append sorted links back to the list
+        allLinks.forEach(link => {
+            gamesList.appendChild(link);
+            // Add line break after each link
+            gamesList.appendChild(document.createElement('br'));
+        });
+    })
+    .catch(error => console.error('Error fetching data:', error));
 </script>
 
 </body>
