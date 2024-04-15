@@ -38,7 +38,7 @@ We are really, really open to contributors. Just make an issue saying what you w
 
 - Project Leads: [Cbass92] [elsgcreate]
 - Project Members [A.S.T.]
-- Skidded from a lot of people before I put this in the credits so thanks all the main people like 3kh0, lax1dude, lbananna
+- Skidded from a lot of people before I put this in the credits so thank you people like 3kh0, lax1dude, lbananna, and WhoIsEv
 
 ## License
 

@@ -32,17 +32,9 @@
     <div id="directory">
         <h1>Welcome to Atlas</h1>
         <h2><a href="index.html">Home</a></h2>
-        <h2>Welcome to Atlas. Credit to whoever made these. I took most of them from github.</h2>
+        <h2>Welcome to Atlas. Credit to whoever made these, and 3kh0 who ripped most of them</h2>
         <h1>Games</h1>
         <ul id="gamesList">
-            <a href="stickhook/">stickman hook</a><br>
-            <a href="mayhem/">gun mayhem 2</a><br>
-            <a href="rooftop/">rooftop snipers</a><br>
-            <a href="flappy/">flappy bird</a><br>
-            <a href="cookie/">cookie clicker</a><br>
-            <a href="slope/">Slope</a><br>
-            <a href="2048/">2048</a><br>
-            <a href="ducklife3/">Duck Life 3</a><br>
             <a href="eagler/">other eaglercraft</a><br>
             <a href="snailbob/">Snail Bob</a><br>
             <a href="snailbob/2/">snail bob 2</a><br>
@@ -52,10 +44,6 @@
             <a href="snailbob/6/">snail bob 6</a><br>
             <a href="snailbob/7/">snail bob 7</a><br>
             <a href="snailbob/8/">snail bob 8</a><br>
-            <a href="bitlife/">bitlife</a><br>
-            <a href="eagleralt/">eaglercraft</a><br>
-            <a href="portalflash/">portal flash</a><br>
-            <a href="1v1lol/">1v1lol</a><br>
         </ul>
         <h1>Not-Games</h1>
         <ul>
@@ -103,7 +91,7 @@ fetch(repoUrl)
         // Create new links for the fetched folders
         const newLinks = folders.map(folder => {
             const link = document.createElement('a');
-            link.href = `https://raw.githack.com/whoisev/relivedassets/main/${folder.path}/index.html`;
+            link.href = `https://rawcdn.githack.com/WhoIsEv/relivedassets/44f39fe159e6a10993104f9779b93bf51c8f30a7/${folder.path}/index.html`;
             link.textContent = folder.name.replace(/-/g, " ");
             return link;
         });
@@ -124,6 +112,63 @@ fetch(repoUrl)
     })
     .catch(error => document.write('Error fetching data'));
 </script>
-
+<script>
+    // GitHub API endpoint for retrieving repository contents
+    const repoUrl = 'https://api.github.com/repos/sebastian-92/game-assets/contents';
+    
+    // Function to sort links alphabetically
+    function sortLinksAlphabetically(links) {
+        return links.sort((a, b) => a.textContent.localeCompare(b.textContent));
+    }
+    
+    // Function to remove duplicates from an array of links
+    function removeDuplicates(links) {
+        const uniqueLinks = [];
+        const linkMap = new Map();
+    
+        links.forEach(link => {
+            if (!linkMap.has(link.href)) {
+                linkMap.set(link.href, true);
+                uniqueLinks.push(link);
+            }
+        });
+    
+        return uniqueLinks;
+    }
+    
+    // Fetch repository contents using GitHub API
+    fetch(repoUrl)
+        .then(response => response.json())
+        .then(data => {
+            // Filter out folders from the response
+            const folders = data.filter(item => item.type === 'dir');
+    
+            // Retrieve existing links
+            const existingLinks = Array.from(document.querySelectorAll('#gamesList a'));
+            
+            // Create new links for the fetched folders
+            const newLinks = folders.map(folder => {
+                const link = document.createElement('a');
+                link.href = `https://raw.githack.com/sebastian-92/game-assets/fixy/${folder.path}/index.html`;
+                link.textContent = folder.name.replace(/-/g, " ");
+                return link;
+            });
+            
+            // Combine existing and new links, remove duplicates, and sort alphabetically
+            const allLinks = sortLinksAlphabetically(removeDuplicates(existingLinks.concat(newLinks)));
+    
+            // Clear existing list
+            const gamesList = document.getElementById('gamesList');
+            gamesList.innerHTML = '';
+    
+            // Append sorted links back to the list
+            allLinks.forEach(link => {
+                gamesList.appendChild(link);
+                // Add line break after each link
+                gamesList.appendChild(document.createElement('br'));
+            });
+        })
+        .catch(error => document.write('Error fetching data'));
+    </script>
 </body>
 </html>
