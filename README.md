@@ -20,7 +20,7 @@ thepegleg is a gaming website done differently. With a focus on providing unbloc
 To make a custom access point, put this html anywhere on your website. the only thing you can't edit is the link, everything else should be fine:```<a href="javascript:void(0);" onclick="var newTab = window.open('about:blank'); newTab.document.write('<head><title>Classroom</title><link rel=\'icon\' type=\'image/png\' href=\'gc.png\'></head><embed allowfullscreen=\'true\'src=\'https://thepegleg.github.io/asdjklhfskjafhakfhueoyraehfjkcnjkdscnsjakdreuoiwefh/index.html\' style=\'position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;\'>'); return false;" style="text-decoration: none;">Atlas</a>```
 ### Bookmarklet
 Put this in your bookmarks bar:
-```javascript:(function(){var newTab = window.open('about:blank');newTab.document.write('<head><title>Classroom</title><link rel=\'icon\' type=\'image/png\' href=\'gc.png\'></head><embed allowfullscreen=\'true\' src=\'https://pegleg.cbass92.org/asdjklhfskjafhakfhueoyraehfjkcnjkdscnsjakdreuoiwefh/index.html\' style=\'position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;\'>');})()```
+```javascript:(function(){var newTab = window.open('about:blank');newTab.document.write('<head><title>Classroom</title><link rel=\'icon\' type=\'image/png\' href=\'gc.png\'></head><embed allowfullscreen=\'true\' src=\'https://thepegleg.github.io/asdjklhfskjafhakfhueoyraehfjkcnjkdscnsjakdreuoiwefh/index.html\' style=\'position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;\'>');})()```
 
 ## Forking the Repository
 
