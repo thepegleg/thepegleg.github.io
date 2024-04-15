@@ -114,7 +114,7 @@ fetch(repoUrl)
 </script>
 <script>
     // GitHub API endpoint for retrieving repository contents
-    const repoUrl = 'https://api.github.com/repos/sebastian-92/game-assets/contents';
+    const repoUrl2 = 'https://api.github.com/repos/sebastian-92/game-assets/contents';
     
     // Function to sort links alphabetically
     function sortLinksAlphabetically(links) {
@@ -137,7 +137,7 @@ fetch(repoUrl)
     }
     
     // Fetch repository contents using GitHub API
-    fetch(repoUrl)
+    fetch(repoUrl2)
         .then(response => response.json())
         .then(data => {
             // Filter out folders from the response
