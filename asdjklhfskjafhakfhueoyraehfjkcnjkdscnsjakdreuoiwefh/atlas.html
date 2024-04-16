@@ -55,9 +55,6 @@
     </div>
 
 <script>
-// GitHub API endpoint for retrieving repository contents
-const repoUrl = 'https://api.github.com/repos/WhoIsEv/relivedassets/contents';
-
 // Function to sort links alphabetically
 function sortLinksAlphabetically(links) {
     return links.sort((a, b) => a.textContent.localeCompare(b.textContent));
@@ -78,89 +75,42 @@ function removeDuplicates(links) {
     return uniqueLinks;
 }
 
-// Fetch repository contents using GitHub API
-fetch(repoUrl)
-    .then(response => response.json())
-    .then(data => {
-        // Filter out folders from the response
-        const folders = data.filter(item => item.type === 'dir');
+// GitHub API endpoint for retrieving repository contents
+const repoUrls = [
+    'https://api.github.com/repos/WhoIsEv/relivedassets/contents',
+    'https://api.github.com/repos/sebastian-92/game-assets/contents'
+];
 
-        // Retrieve existing links
-        const existingLinks = Array.from(document.querySelectorAll('#gamesList a'));
-        
-        // Create new links for the fetched folders
-        const newLinks = folders.map(folder => {
-            const link = document.createElement('a');
-            link.href = `https://rawcdn.githack.com/WhoIsEv/relivedassets/44f39fe159e6a10993104f9779b93bf51c8f30a7/${folder.path}/index.html`;
-            link.textContent = folder.name.replace(/-/g, " ");
-            return link;
-        });
-        
-        // Combine existing and new links, remove duplicates, and sort alphabetically
-        const allLinks = sortLinksAlphabetically(removeDuplicates(existingLinks.concat(newLinks)));
-
-        // Clear existing list
-        const gamesList = document.getElementById('gamesList');
-        gamesList.innerHTML = '';
-
-        // Append sorted links back to the list
-        allLinks.forEach(link => {
-            gamesList.appendChild(link);
-            // Add line break after each link
-            gamesList.appendChild(document.createElement('br'));
-        });
-    })
-    .catch(error => document.write('Error fetching data'));
-</script>
-<script>
-    // GitHub API endpoint for retrieving repository contents
-    const repoUrl2 = 'https://api.github.com/repos/sebastian-92/game-assets/contents';
-    
-    // Function to sort links alphabetically
-    function sortLinksAlphabetically(links) {
-        return links.sort((a, b) => a.textContent.localeCompare(b.textContent));
-    }
-    
-    // Function to remove duplicates from an array of links
-    function removeDuplicates(links) {
-        const uniqueLinks = [];
-        const linkMap = new Map();
-    
-        links.forEach(link => {
-            if (!linkMap.has(link.href)) {
-                linkMap.set(link.href, true);
-                uniqueLinks.push(link);
-            }
-        });
-    
-        return uniqueLinks;
-    }
-    
-    // Fetch repository contents using GitHub API
-    fetch(repoUrl2)
+// Fetch repository contents using GitHub API for each URL
+repoUrls.forEach(repoUrl => {
+    fetch(repoUrl)
         .then(response => response.json())
         .then(data => {
             // Filter out folders from the response
             const folders = data.filter(item => item.type === 'dir');
-    
+
             // Retrieve existing links
             const existingLinks = Array.from(document.querySelectorAll('#gamesList a'));
             
             // Create new links for the fetched folders
             const newLinks = folders.map(folder => {
                 const link = document.createElement('a');
-                link.href = `https://raw.githack.com/sebastian-92/game-assets/fixy/${folder.path}/index.html`;
+                if (repoUrl.includes('WhoIsEv')) {
+                    link.href = `https://rawcdn.githack.com/WhoIsEv/relivedassets/44f39fe159e6a10993104f9779b93bf51c8f30a7/${folder.path}/index.html`;
+                } else {
+                    link.href = `https://raw.githack.com/sebastian-92/game-assets/fixy/${folder.path}/index.html`;
+                }
                 link.textContent = folder.name.replace(/-/g, " ");
                 return link;
             });
             
             // Combine existing and new links, remove duplicates, and sort alphabetically
             const allLinks = sortLinksAlphabetically(removeDuplicates(existingLinks.concat(newLinks)));
-    
+
             // Clear existing list
             const gamesList = document.getElementById('gamesList');
             gamesList.innerHTML = '';
-    
+
             // Append sorted links back to the list
             allLinks.forEach(link => {
                 gamesList.appendChild(link);
@@ -168,7 +118,8 @@ fetch(repoUrl)
                 gamesList.appendChild(document.createElement('br'));
             });
         })
-        .catch(error => document.write('Error fetching data'));
-    </script>
+        .catch(error => console.error('Error fetching data:', error));
+});
+</script>
 </body>
 </html>
