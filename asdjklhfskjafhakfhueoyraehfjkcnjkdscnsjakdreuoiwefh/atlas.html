@@ -35,7 +35,16 @@
         <h2>Welcome to Atlas. Credit to whoever made these, and 3kh0 who ripped most of them</h2>
         <h1>Games</h1>
         <ul id="gamesList">
-            <!-- Links will be dynamically generated here -->
+            <a href="eagler/">eaglercraft 1.5</a><br>
+            <a href="snailbob/">Snail Bob 1</a><br>
+            <a href="snailbob/2">Snail Bob 2</a><br>
+            <a href="snailbob/3">Snail Bob 3</a><br>
+            <a href="snailbob/4">Snail Bob 4</a><br>
+            <a href="snailbob/5">Snail Bob 5</a><br>
+            <a href="snailbob/6">Snail Bob 6</a><br>
+            <a href="snailbob/7">Snail Bob 7</a><br>
+            <a href="snailbob/8">Snail Bob 8</a><br>
+
         </ul>
         <h1>Not-Games</h1>
         <ul>
@@ -52,14 +61,15 @@
             return links.sort((a, b) => a.textContent.localeCompare(b.textContent));
         }
         
-        // Function to remove duplicates from an array of links
+        // Function to remove duplicates from an array of links based on folder names
         function removeDuplicates(links) {
             const uniqueLinks = [];
             const linkMap = new Map();
         
             links.forEach(link => {
-                if (!linkMap.has(link.href)) {
-                    linkMap.set(link.href, true);
+                const folderName = link.textContent.trim();
+                if (!linkMap.has(folderName)) {
+                    linkMap.set(folderName, true);
                     uniqueLinks.push(link);
                 }
             });
@@ -73,44 +83,41 @@
             'https://api.github.com/repos/WhoIsEv/relivedassets/contents'
         ];
         
-// Fetch repository contents using GitHub API for each URL
-Promise.all(repoUrls.map(repoUrl => {
-    return fetch(repoUrl)
-        .then(response => response.json())
-        .catch(error => {
-            console.error('Error fetching data:', error);
-            return [];
+        // Fetch repository contents using GitHub API for each URL
+        Promise.all(repoUrls.map(repoUrl => {
+            return fetch(repoUrl)
+                .then(response => response.json())
+                .catch(error => {
+                    console.error('Error fetching data:', error);
+                    return [];
+                });
+        })).then(([gameAssetsData, relivedAssetsData]) => {
+            const existingLinks = Array.from(document.querySelectorAll('#gamesList a'));
+            const newLinks = [];
+
+            // Function to add new links from a repository
+            function addNewLinks(repoData, baseUrl) {
+                repoData.forEach(item => {
+                    const link = document.createElement('a');
+                    link.href = `${baseUrl}/${item.path}/index.html`;
+                    link.textContent = item.name.replace(/-/g, " ");
+                    newLinks.push(link);
+                });
+            }
+
+            addNewLinks(gameAssetsData, 'https://raw.githack.com/sebastian-92/game-assets/fixy');
+            addNewLinks(relivedAssetsData, 'https://rawcdn.githack.com/WhoIsEv/relivedassets/44f39fe159e6a10993104f9779b93bf51c8f30a7');
+
+            const allLinks = sortLinksAlphabetically(removeDuplicates(existingLinks.concat(newLinks)));
+
+            const gamesList = document.getElementById('gamesList');
+            gamesList.innerHTML = '';
+
+            allLinks.forEach(link => {
+                gamesList.appendChild(link);
+                gamesList.appendChild(document.createElement('br'));
+            });
         });
-})).then(([gameAssetsData, relivedAssetsData]) => {
-    const gameAssetsFolders = gameAssetsData.filter(item => item.type === 'dir');
-    const relivedAssetsFolders = relivedAssetsData.filter(item => item.type === 'dir');
-
-    const existingLinks = Array.from(document.querySelectorAll('#gamesList a'));
-    const newLinks = [];
-
-    gameAssetsFolders.forEach(folder => {
-        const existsInGameAssets = gameAssetsFolders.some(item => item.name === folder.name);
-        const link = document.createElement('a');
-        if (existsInGameAssets) {
-            link.href = `https://raw.githack.com/sebastian-92/game-assets/fixy/${folder.path}/index.html`;
-        } else {
-            link.href = `https://rawcdn.githack.com/WhoIsEv/relivedassets/44f39fe159e6a10993104f9779b93bf51c8f30a7/${folder.path}/index.html`;
-        }
-        link.textContent = folder.name.replace(/-/g, " ");
-        newLinks.push(link);
-    });
-
-    const allLinks = sortLinksAlphabetically(removeDuplicates(existingLinks.concat(newLinks)));
-
-    const gamesList = document.getElementById('gamesList');
-    gamesList.innerHTML = '';
-
-    allLinks.forEach(link => {
-        gamesList.appendChild(link);
-        gamesList.appendChild(document.createElement('br'));
-    });
-});
-
     </script>        
 </body>
 </html>
