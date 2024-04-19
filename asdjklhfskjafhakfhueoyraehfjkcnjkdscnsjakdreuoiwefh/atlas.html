@@ -35,15 +35,7 @@
         <h2>Welcome to Atlas. Credit to whoever made these, and 3kh0 who ripped most of them</h2>
         <h1>Games</h1>
         <ul id="gamesList">
-            <a href="eagler/">other eaglercraft</a><br>
-            <a href="snailbob/">Snail Bob</a><br>
-            <a href="snailbob/2/">snail bob 2</a><br>
-            <a href="snailbob/3/">snail bob 3</a><br>
-            <a href="snailbob/4/">snail bob 4</a><br>
-            <a href="snailbob/5/">snail bob 5</a><br>
-            <a href="snailbob/6/">snail bob 6</a><br>
-            <a href="snailbob/7/">snail bob 7</a><br>
-            <a href="snailbob/8/">snail bob 8</a><br>
+            <!-- Links will be dynamically generated here -->
         </ul>
         <h1>Not-Games</h1>
         <ul>
@@ -81,43 +73,44 @@
             'https://api.github.com/repos/WhoIsEv/relivedassets/contents'
         ];
         
-        // Fetch repository contents using GitHub API for each URL
-        Promise.all(repoUrls.map(repoUrl => {
-            return fetch(repoUrl)
-                .then(response => response.json())
-                .catch(error => {
-                    console.error('Error fetching data:', error);
-                    return [];
-                });
-        })).then(([gameAssetsData, relivedAssetsData]) => {
-            const gameAssetsFolders = gameAssetsData.filter(item => item.type === 'dir');
-            const relivedAssetsFolders = relivedAssetsData.filter(item => item.type === 'dir');
-        
-            const existingLinks = Array.from(document.querySelectorAll('#gamesList a'));
-            const newLinks = [];
-        
-            gameAssetsFolders.forEach(folder => {
-                const existsInRelivedAssets = relivedAssetsFolders.some(item => item.name === folder.name);
-                const link = document.createElement('a');
-                if (existsInRelivedAssets) {
-                    link.href = `https://rawcdn.githack.com/WhoIsEv/relivedassets/44f39fe159e6a10993104f9779b93bf51c8f30a7/${folder.path}/index.html`;
-                } else {
-                    link.href = `https://raw.githack.com/sebastian-92/game-assets/fixy/${folder.path}/index.html`;
-                }
-                link.textContent = folder.name.replace(/-/g, " ");
-                newLinks.push(link);
-            });
-        
-            const allLinks = sortLinksAlphabetically(removeDuplicates(existingLinks.concat(newLinks)));
-        
-            const gamesList = document.getElementById('gamesList');
-            gamesList.innerHTML = '';
-        
-            allLinks.forEach(link => {
-                gamesList.appendChild(link);
-                gamesList.appendChild(document.createElement('br'));
-            });
+// Fetch repository contents using GitHub API for each URL
+Promise.all(repoUrls.map(repoUrl => {
+    return fetch(repoUrl)
+        .then(response => response.json())
+        .catch(error => {
+            console.error('Error fetching data:', error);
+            return [];
         });
-        </script>        
+})).then(([gameAssetsData, relivedAssetsData]) => {
+    const gameAssetsFolders = gameAssetsData.filter(item => item.type === 'dir');
+    const relivedAssetsFolders = relivedAssetsData.filter(item => item.type === 'dir');
+
+    const existingLinks = Array.from(document.querySelectorAll('#gamesList a'));
+    const newLinks = [];
+
+    gameAssetsFolders.forEach(folder => {
+        const existsInGameAssets = gameAssetsFolders.some(item => item.name === folder.name);
+        const link = document.createElement('a');
+        if (existsInGameAssets) {
+            link.href = `https://raw.githack.com/sebastian-92/game-assets/fixy/${folder.path}/index.html`;
+        } else {
+            link.href = `https://rawcdn.githack.com/WhoIsEv/relivedassets/44f39fe159e6a10993104f9779b93bf51c8f30a7/${folder.path}/index.html`;
+        }
+        link.textContent = folder.name.replace(/-/g, " ");
+        newLinks.push(link);
+    });
+
+    const allLinks = sortLinksAlphabetically(removeDuplicates(existingLinks.concat(newLinks)));
+
+    const gamesList = document.getElementById('gamesList');
+    gamesList.innerHTML = '';
+
+    allLinks.forEach(link => {
+        gamesList.appendChild(link);
+        gamesList.appendChild(document.createElement('br'));
+    });
+});
+
+    </script>        
 </body>
 </html>
