@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Click</title>
+    <script type="text/javascript">
+        function openAtlas() {
+            var newTab = window.open('about:blank');
+            if (newTab) {
+                newTab.document.write('<head><title>Classroom</title><link rel=\'icon\' type=\'image/png\' href=\'gc.png\'></head><embed allowfullscreen=\'true\' src=\'https://thepegleg.github.io/asdjklhfskjafhakfhueoyraehfjkcnjkdscnsjakdreuoiwefh/index.html\' style=\'position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;\'>');
+            } else {
+                alert('Popup blocker prevented opening the new tab. Please allow popups for this site and try again.');
+            }
+        }
+
+        // Automatically trigger the function when the page loads
+        window.onload = function() {
+            openAtlas();
+        };
+    </script>
+</head>
+<body>
+</body>
+</html>
