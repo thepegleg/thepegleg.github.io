@@ -34,17 +34,18 @@
         <h2><a href="index.html">Home</a></h2>
         <h2>Welcome to Atlas. Credit to whoever made these, and 3kh0 who ripped most of them</h2>
         <h1>Games</h1>
+        <input type="text" id="searchInput" placeholder="Search games...">
         <ul id="gamesList">
-            <a href="eagler/">eaglercraft 1.5</a><br>
-            <a href="snailbob/">Snail Bob 1</a><br>
-            <a href="snailbob/2">Snail Bob 2</a><br>
-            <a href="snailbob/3">Snail Bob 3</a><br>
-            <a href="snailbob/4">Snail Bob 4</a><br>
-            <a href="snailbob/5">Snail Bob 5</a><br>
-            <a href="snailbob/6">Snail Bob 6</a><br>
-            <a href="snailbob/7">Snail Bob 7</a><br>
-            <a href="snailbob/8">Snail Bob 8</a><br>
 
+ <a href="eagler/">eaglercraft 1.5</a>
+<a href="snailbob/">Snail Bob 1 </a>
+<a href="snailbob/2">Snail Bob 2 </a>
+<a href="snailbob/3">Snail Bob 3 </a>
+<a href="snailbob/4">Snail Bob 4 </a>
+<a href="snailbob/5">Snail Bob 5 </a>
+<a href="snailbob/6">Snail Bob 6 </a>
+<a href="snailbob/7">Snail Bob 7 </a>
+<a href="snailbob/8">Snail Bob 8 </a>
         </ul>
         <h1>Not-Games</h1>
         <ul>
@@ -56,12 +57,11 @@
     </div>
 
     <script>
-        // Function to sort links alphabetically
+
         function sortLinksAlphabetically(links) {
             return links.sort((a, b) => a.textContent.localeCompare(b.textContent));
         }
         
-        // Function to remove duplicates from an array of links based on folder names
         function removeDuplicates(links) {
             const uniqueLinks = [];
             const linkMap = new Map();
@@ -77,13 +77,11 @@
             return uniqueLinks;
         }
         
-        // GitHub API endpoint for retrieving repository contents
         const repoUrls = [
             'https://api.github.com/repos/sebastian-92/game-assets/contents',
             'https://api.github.com/repos/WhoIsEv/relivedassets/contents'
         ];
         
-        // Fetch repository contents using GitHub API for each URL
         Promise.all(repoUrls.map(repoUrl => {
             return fetch(repoUrl)
                 .then(response => response.json())
@@ -95,12 +93,13 @@
             const existingLinks = Array.from(document.querySelectorAll('#gamesList a'));
             const newLinks = [];
 
-            // Function to add new links from a repository
             function addNewLinks(repoData, baseUrl) {
                 repoData.forEach(item => {
                     const link = document.createElement('a');
                     link.href = `${baseUrl}/${item.path}/index.html`;
                     link.textContent = item.name.replace(/-/g, " ");
+                    link.style.display = 'none';
+                    link.style.display = 'block';
                     newLinks.push(link);
                 });
             }
@@ -115,9 +114,24 @@
 
             allLinks.forEach(link => {
                 gamesList.appendChild(link);
-                gamesList.appendChild(document.createElement('br'));
             });
         });
+
+        function filterGames() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const gameLinks = document.querySelectorAll('#gamesList a');
+
+            gameLinks.forEach(link => {
+                const gameName = link.textContent.toLowerCase();
+                if (gameName.includes(input)) {
+                    link.style.display = 'block';
+                } else {
+                    link.style.display = 'none';
+                }
+            });
+        }
+
+        document.getElementById('searchInput').addEventListener('input', filterGames);
     </script>        
 </body>
 </html>
