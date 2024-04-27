@@ -7,7 +7,7 @@
             color: white;
             background-color: #000000;
             text-align: center;
-            font-family: "Rye", serif;
+            font-family: "Rye"
             font-weight: 400;
             font-style: normal;
         }
@@ -15,6 +15,7 @@
         a {
             color: white;
             text-decoration: none;
+            display: block;
         }
         
         #directory {
@@ -36,28 +37,17 @@
         <h1>Games</h1>
         <input type="text" id="searchInput" placeholder="Search games...">
         <ul id="gamesList">
-
- <a href="eagler/">eaglercraft 1.5</a>
-<a href="snailbob/">Snail Bob 1 </a>
-<a href="snailbob/2">Snail Bob 2 </a>
-<a href="snailbob/3">Snail Bob 3 </a>
-<a href="snailbob/4">Snail Bob 4 </a>
-<a href="snailbob/5">Snail Bob 5 </a>
-<a href="snailbob/6">Snail Bob 6 </a>
-<a href="snailbob/7">Snail Bob 7 </a>
-<a href="snailbob/8">Snail Bob 8 </a>
         </ul>
         <h1>Not-Games</h1>
-        <ul>
-            <a href="92vids/">92vids</a><br>
-            <a href="flashplayer.html">Flash Player</a><br>
-            <a href="turbowarp.html">TurboWarp Packager</a><br>
-            <a href="thehold/">The Hold - Crew Only</a><br>
+        <ul id="notGamesList">
+        <a href="92vids/">92vids</a>
+<a href="flashplayer.html">Flash Player</a>
+<a href="turbowarp.html">TurboWarp Packager</a>
+<a href="thehold/">The Hold - Crew Only</a>
         </ul>
     </div>
 
     <script>
-
         function sortLinksAlphabetically(links) {
             return links.sort((a, b) => a.textContent.localeCompare(b.textContent));
         }
@@ -79,7 +69,8 @@
         
         const repoUrls = [
             'https://api.github.com/repos/sebastian-92/game-assets/contents',
-            'https://api.github.com/repos/WhoIsEv/relivedassets/contents'
+            'https://api.github.com/repos/WhoIsEv/relivedassets/contents',
+            'https://api.github.com/repos/selenite-cc/selenite-old/contents'
         ];
         
         Promise.all(repoUrls.map(repoUrl => {
@@ -89,23 +80,28 @@
                     console.error('Error fetching data:', error);
                     return [];
                 });
-        })).then(([gameAssetsData, relivedAssetsData]) => {
-            const existingLinks = Array.from(document.querySelectorAll('#gamesList a'));
+        })).then(([gameAssetsData, relivedAssetsData, seleniteAssetsData]) => {
+            const existingLinks = [];
             const newLinks = [];
 
-            function addNewLinks(repoData, baseUrl) {
+            function addNewLinks(repoData, baseUrl, listId) {
                 repoData.forEach(item => {
-                    const link = document.createElement('a');
-                    link.href = `${baseUrl}/${item.path}/index.html`;
-                    link.textContent = item.name.replace(/-/g, " ");
-                    link.style.display = 'none';
-                    link.style.display = 'block';
-                    newLinks.push(link);
+                    if (item.type === 'dir') {
+                        const link = document.createElement('li');
+                        const anchor = document.createElement('a');
+                        anchor.href = `${baseUrl}/${item.path}/index.html`;
+                        anchor.textContent = item.name.replace(/-/g, " ");
+                        link.appendChild(anchor);
+                        link.style.display = 'none';
+                        link.style.display = 'block';
+                        newLinks.push(link);
+                    }
                 });
             }
 
-            addNewLinks(gameAssetsData, 'https://raw.githack.com/sebastian-92/game-assets/fixy');
-            addNewLinks(relivedAssetsData, 'https://rawcdn.githack.com/WhoIsEv/relivedassets/44f39fe159e6a10993104f9779b93bf51c8f30a7');
+            addNewLinks(gameAssetsData, 'https://raw.githack.com/sebastian-92/game-assets/fixy', 'gamesList');
+            addNewLinks(relivedAssetsData, 'https://rawcdn.githack.com/WhoIsEv/relivedassets/44f39fe159e6a10993104f9779b93bf51c8f30a7', 'gamesList');
+            addNewLinks(seleniteAssetsData, 'https://raw.githack.com/selenite-cc/selenite-old/master', 'gamesList');
 
             const allLinks = sortLinksAlphabetically(removeDuplicates(existingLinks.concat(newLinks)));
 
@@ -113,13 +109,15 @@
             gamesList.innerHTML = '';
 
             allLinks.forEach(link => {
-                gamesList.appendChild(link);
+                if (!link.textContent.startsWith(".")) {
+                    gamesList.appendChild(link);             
+              }
             });
         });
 
         function filterGames() {
             const input = document.getElementById('searchInput').value.toLowerCase();
-            const gameLinks = document.querySelectorAll('#gamesList a');
+            const gameLinks = document.querySelectorAll('#gamesList li a');
 
             gameLinks.forEach(link => {
                 const gameName = link.textContent.toLowerCase();
