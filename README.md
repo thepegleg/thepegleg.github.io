@@ -1,6 +1,7 @@
 # thepegleg
-
-![thepegleg Logo](favicon.ico)
+<p align="center">
+<img src="favicon.ico" alt="drawing" width="200"/>
+</p>
 
 ## Overview
 
