@@ -1,0 +1,13 @@
+{
+    "name": "Classroom",
+    "short_name": "Classroom",
+    "start_url": "/asdjklhfskjafhakfhueoyraehfjkcnjkdscnsjakdreuoiwefh/index.html",
+    "display": "standalone",
+    "icons": [
+      {
+        "src": "favicon.ico",
+        "type": "image/png", "sizes": "512x442"
+      }
+    ]
+  }
+  
