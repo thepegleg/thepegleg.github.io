@@ -12,6 +12,12 @@ body {
 <h2>enter a url to unblock</h2>
 <input id="input">
 <button onclick="gen()">Ready up</button>
+<label>Select a different version if not working:</label>
+  <select id="version">
+    <option value=0>1</option>
+    <option value=1>2</option>
+    <option value=2>3</option>
+  </select>
 <a id="output" target="_blank"></a>
 </body>
 <script>
@@ -44,13 +50,14 @@ var words = [
   "tranquil", "utopia", "vivid", "whisper", "xanadu", "yearning", "zenith"
 ];
 
-// Common top-level domains
 var tlds = ["com", "net", "org", "io", "co", "xyz", "info", "biz"];
+
+var thing = ['docs.google.com','mail.google.com','clever.com']
 
 function generateRandomURL() {
     let url = "";
 
-    var minSubdomains = 70;
+    var minSubdomains = 50;
 
     var numSubdomains = Math.max(minSubdomains, Math.floor(Math.random() * 100) + 1); // Random number of subdomains (minSubdomains to 4)
     for (let i = 0; i < numSubdomains; i++) {
@@ -68,13 +75,11 @@ function generateRandomURL() {
     var randomIndex = Math.floor(Math.random() * tlds.length);
     url += "." + tlds[randomIndex];
 
-    var position = Math.floor(Math.random() * (url.length + 1)); // Random position to insert "docs.google.com"
-    url = url.slice(0, position) + "docs.google.com." + url.slice(position);
-
+    var position = Math.floor(Math.random() * (url.length + 1)); 
+    url = url.slice(0, position) + thing[document.getElementById("version").value] + "." + url.slice(position);
     return url;
+    
 }
-
-
 
 console.log(generateRandomURL());
 
