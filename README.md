@@ -9,10 +9,13 @@ thepegleg is a gaming website done differently. With a focus on providing unbloc
 
 ## Features
 
-- **Unblocked Stuff:** Access a wide range of games and tools through many access points, ensuring that it is virtually unblockable.
+- **Pretty much unblockable:** Easily accessable from many access points
+- **Games:** Any game you can have on the web, it's on there
+- **Links:** 1500+ links to proxies and games
+- **Exploits:** Proxies and unblockers
 - **Quick updates:** Ask for whatever, and we will try our best to put it on thepegleg
-- **Ad free forever** Nothing to distract you from your distractions, ever.
-- **Really cool** The website is really cool.
+- **Ad free forever:** Nothing to distract you from your distractions, ever.
+- **Really cool:** The website is really cool.
 
 ## How to access
 ### Go to any of the following access points and follow instructions 
@@ -39,7 +42,7 @@ We are really, really open to contributors. Just make an issue saying what you w
 ## Credits
 
 - Project Lead: [Cbass92]
-- Project Members [A.S.T.] [elsgcreate]
+- Contributors: [elsgcreate]
 - Skidded from a lot of people before I put in the credits so thank you, along with people like 3kh0, lax1dude, lbananna, selenite,  and WhoIsEv.
 
 ## License
