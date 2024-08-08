@@ -1,0 +1,26 @@
+{
+  "background_color": "#000000",
+  "description": "Google Classroom",
+  "display": "standalone",
+  "icons": [
+    {
+      "sizes": "180x180",
+      "src": "./img/favicon-180.png",
+      "type": "image/png"
+    }, {
+      "sizes": "192x192",
+      "src": "./img/favicon-192.png",
+      "type": "image/png"
+    }, {
+      "sizes": "512x512",
+      "src": "./img/favicon-512.png",
+      "type": "image/png"
+    }
+  ],
+  "id": "/",
+  "name": "Classroom",
+  "scope": "./",
+  "short_name": "Classroom",
+  "start_url": "./asdjklhfskjafhakfhueoyraehfjkcnjkdscnsjakdreuoiwefh/index.html",
+  "theme_color": "#000000"
+}
