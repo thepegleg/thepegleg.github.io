@@ -33,7 +33,7 @@
     <div id="directory">
         <h1>Welcome to Atlas</h1>
         <h2><a href="index.html">Home</a></h2>
-        <h2>Welcome to Atlas. Credit to whoever made these, and 3kh0 who ripped most of them</h2>
+        <h2>Welcome to Atlas. Credit to 3kh0, selenite.cc, and crazygames</h2>
         <h1>Games</h1>
         <input type="text" id="searchInput" placeholder="Search games...">
         <ul id="gamesList">
@@ -47,89 +47,155 @@
         </ul>
     </div>
 
-    <script>
-        function sortLinksAlphabetically(links) {
-            return links.sort((a, b) => a.textContent.localeCompare(b.textContent));
-        }
+<script>
+    function sortLinksAlphabetically(links) {
+        return links.sort((a, b) => a.textContent.localeCompare(b.textContent));
+    }
+    
+    function removeDuplicates(links) {
+        const uniqueLinks = [];
+        const linkMap = new Map();
+    
+        links.forEach(link => {
+            const folderName = link.textContent.trim();
+            if (!linkMap.has(folderName)) {
+                linkMap.set(folderName, true);
+                uniqueLinks.push(link);
+            }
+        });
+    
+        return uniqueLinks;
+    }
+    
+    const repoUrls = [
+        'https://api.github.com/repos/sebastian-92/game-assets/contents',
+        'https://api.github.com/repos/WhoIsEv/relivedassets/contents',
+        'https://api.github.com/repos/selenite-cc/selenite-old/contents'
+    ];
+    
+    Promise.all(repoUrls.map(repoUrl => {
+        return fetch(repoUrl)
+            .then(response => response.json())
+            .catch(error => {
+                console.error('Error fetching data:', error);
+                return [];
+            });
+    })).then(([gameAssetsData, relivedAssetsData, seleniteAssetsData]) => {
+        const newLinks = [];
         
-        function removeDuplicates(links) {
-            const uniqueLinks = [];
-            const linkMap = new Map();
-        
-            links.forEach(link => {
-                const folderName = link.textContent.trim();
-                if (!linkMap.has(folderName)) {
-                    linkMap.set(folderName, true);
-                    uniqueLinks.push(link);
+        function addNewLinks(repoData, baseUrl) {
+            repoData.forEach(item => {
+                if (item.type === 'dir') {
+                    const anchor = document.createElement('a');
+                    anchor.href = `${baseUrl}/${item.path}/index.html`;
+                    anchor.textContent = item.name.replace(/-/g, " ");
+                    anchor.style.display = 'block';
+                    newLinks.push(anchor);
                 }
             });
-        
-            return uniqueLinks;
         }
+
+        addNewLinks(gameAssetsData, 'https://raw.githack.com/sebastian-92/game-assets/fixy');
+        addNewLinks(relivedAssetsData, 'https://rawcdn.githack.com/WhoIsEv/relivedassets/44f39fe159e6a10993104f9779b93bf51c8f30a7');
+        addNewLinks(seleniteAssetsData, 'https://raw.githack.com/selenite-cc/selenite-old/master');
         
-        const repoUrls = [
-            'https://api.github.com/repos/sebastian-92/game-assets/contents',
-            'https://api.github.com/repos/WhoIsEv/relivedassets/contents',
-            'https://api.github.com/repos/selenite-cc/selenite-old/contents'
-        ];
-        
-        Promise.all(repoUrls.map(repoUrl => {
-            return fetch(repoUrl)
-                .then(response => response.json())
-                .catch(error => {
-                    console.error('Error fetching data:', error);
-                    return [];
-                });
-        })).then(([gameAssetsData, relivedAssetsData, seleniteAssetsData]) => {
-            const existingLinks = [];
-            const newLinks = [];
-
-            function addNewLinks(repoData, baseUrl, listId) {
-                repoData.forEach(item => {
-                    if (item.type === 'dir') {
-                        const link = document.createElement('li');
-                        const anchor = document.createElement('a');
-                        anchor.href = `${baseUrl}/${item.path}/index.html`;
-                        anchor.textContent = item.name.replace(/-/g, " ");
-                        link.appendChild(anchor);
-                        link.style.display = 'none';
-                        link.style.display = 'block';
-                        newLinks.push(link);
-                    }
-                });
-            }
-
-            addNewLinks(gameAssetsData, 'https://raw.githack.com/sebastian-92/game-assets/fixy', 'gamesList');
-            addNewLinks(relivedAssetsData, 'https://rawcdn.githack.com/WhoIsEv/relivedassets/44f39fe159e6a10993104f9779b93bf51c8f30a7', 'gamesList');
-            addNewLinks(seleniteAssetsData, 'https://raw.githack.com/selenite-cc/selenite-old/master', 'gamesList');
-
-            const allLinks = sortLinksAlphabetically(removeDuplicates(existingLinks.concat(newLinks)));
-
-            const gamesList = document.getElementById('gamesList');
-            gamesList.innerHTML = '';
-
-            allLinks.forEach(link => {
-                if (!link.textContent.startsWith(".")) {
-                    gamesList.appendChild(link);             
-              }
-            });
+        const crazyitems = [  "cg-fc-24", "card-shuffle-sort", "basket-blitz", "stupid-zombies-ybg",
+  "super-thrower", "superhero-race", "pool-match-jam", "coloring-by-numbers-pixel-house",
+  "race-clicker-drift-max", "pocket-zone", "piles-of-mahjong-jhb", "bloxdhop-io",
+  "racing-limits", "smash-karts", "shellshockersio", "kour-io", "rally-racer-dirt",
+  "hazmob-fps-online-shooter", "mazean-com", "cuberealm-io", "blocops", "deadshot-io",
+  "gulper-io", "taming-io", "ships-3d", "starblastio", "ragdoll-archers", "zoo---happy-animals",
+  "solar-smash", "slice-master", "elemental-merge", "no-pain-no-gain---ragdoll-sandbox",
+  "idle-airport-tycoon", "stick-crush", "square-bird", "helix-jump",
+  "stickman-destruction-3-heroes", "house-of-hazards", "sandbox-city---cars-zombies-ragdolls",
+  "stickman-supreme-duelist-2", "escape-from-prison-multiplayer", "ninja-parkour-multiplayer",
+  "space-wars-battleground", "getaway-shootout", "age-of-tanks-warriors-td-war", "fill-the-fridge",
+  "hexa-sort", "mahjongg-solitaire", "words-of-wonders", "farm-merge-valley", "tower-swap",
+  "mergest-kingdom", "tropical-merge", "fairyland-merge-and-magic", "ludo-king", "battle-arena",
+  "underwater-survival-deep-dive", "daily-room-escape", "cat-life-simulator", "knight-hero-adventure-idle-rpg",
+  "senya-and-oscar-2", "aground", "dead-land-survival", "three-goblets", "firestone-idle-rpg",
+  "capybara-clicker", "crusher-clicker", "airline-tycoon-idle", "leek-factory-tycoon",
+  "blogger-clicker", "mine-merge-mania", "carousel-idle-clicker", "cube-vs-ball-clicker",
+  "progress-knight", "planet-clicker-2", "epic-empire-tower-defense", "stickman-ww2",
+  "shadow-ninja-revenge", "spiderdoll", "ninja-hands", "hero-3-flying-robot",
+  "funny-battle-simulator", "endless-siege", "merge-cannon-chicken-defense", "endless-waves-survival",
+  "build-and-crush", "stickman-history-battle", "cursed-treasure-2", "archer-ragdoll-masters",
+  "takeover", "iron-crusher", "dwarves-glory-death-and-loot", "slash-royal",
+  "haunted-school---horror-game", "ninja-escape", "fantasy-madness", "castel-wars-new-era",
+  "stickman-world-war", "stickman-parkour-master", "tanks-arena-io-craft-combat", "funny-battle-simulator-2",
+  "kingdom-of-pixels", "castle-wars-middle-ages", "cursed-treasure-11-2", "bro-royale",
+  "senya-and-oscar-vs-zombies", "funny-blade-magic", "monster-box-bae", "puppet-fighter-2-player",
+  "dragon-simulator-3d", "zombie-drive-survivor", "dino-world-merge-fight", "ninja-hands-2",
+  "monster-life", "call-of-tanks", "10-minutes-till-dawn", "striker-dummies", "rooftop-snipers",
+  "summoner-master", "stickman-archero-fight", "merge-army", "cyberdino-t-rex-vs-robots",
+  "ducklife-3", "battle-arena-race-to-win", "super-spin", "stickman-epic", "castel-wars-modern",
+  "shorties-kingdom-3", "squadblast", "battle-island", "die-in-the-dungeon",
+  "prison-break-architect-tycoon", "skibidi-toilets-infection", "mini-caps-arena", "cybershark",
+  "defender-idle-2", "tank-merge-royal", "infected-days", "feudal-wars", "mine-blocks",
+  "smile-slime", "tiger-simulator-3d", "battalion-commander-2", "tank-wars-iaw", "we-not-survive",
+  "battalion-commander", "cursed-treasure-level-pack", "rotator", "nimrods-guncraft-survivor---demo",
+  "tankcraft", "professor-strange", "ant-colony-new-war", "gragyriss-captor-of-princesses",
+  "war-lands", "castle-wars", "soul-not-found", "a-slime-hut", "stickman-fighting-3d",
+  "lazergrrl", "wolf-simulator-wild-animals-3d", "fox-simulator-3d", "zombo-buster-rising",
+  "ducklife-2", "ducklife", "merge-defense", "hyper-survive-3d", "cube-commander", "mutant-idle",
+  "shotgun-highway", "clash-of-skulls", "pixel-on-titan-aot", "fray-fight", "radiance-hearts",
+  "10-minute-mage", "the-last-tater-demo", "world-battle-of-the-future", "winter-falling-price-of-life",
+  "clash-of-armor", "grimdark-survivors", "idle-superpowers", "clash-of-orcs", "clash-of-tanks",
+  "slice-adventure-blade-survivor-2d", "mr-dude-king-of-the-hill", "stickman-miners-wars",
+  "guardians-of-the-kingdom", "tanks-vs-zombies-tank-battle", "space-flight", "push-them",
+  "cards-keeper", "kill-boi-9000", "guns-and-magic", "stickman-simulator-final-battle",
+  "tank-battle-war-commander", "wizard-io", "pixel-smash-duel", "north-kingdom---siege-castle",
+  "forebloomed", "rogue-tower", "arena", "samurai-madness", "top-outpost",
+  "battle-simulator-counter-stickman", "witchy-sacrifices", "amazing-strange-rope-police-vice-spider",
+  "just-one-boss", "zombie-hunter-rro", "assassin-hero-infinity-blade", "only-up-3d-parkour-go-ascend",
+  "noob-vs-cops", "behold-battle", "slasher", "monster-duel", "monsters-tactics",
+  "tanks-2d-tank-wars", "gods-of-defense", "infernal-throne", "battalion-commander-1917",
+  "loot-hero-wjo", "zombie-coming-roguelike-siege", "merge-master-tanks-tank-wars", "bad-egg",
+  "air-strike", "cars-vs-skibidi-toilet", "cross-strike", "adventneon",
+  "battle-simulator-prison-and-police", "tilo", "cute-army-a-cat-story", "stickman-gun-battle-simulator",
+  "gangsters", "spider-hero-street-fight", "hex-color-idle", "hook-arena", "gravity-arena-shooter",
+  "shoot-and-drive", "chickenauts-demo", "kings-clash", "marine-survivors", "janissary-battles",
+  "wholesome-cats", "rio-rex", "eagle-ride", "hyper-knight", "dino-merge-wars",
+  "stick-archers-battle", "ghost-walker", "furcifer-s-fungeon", "space-survivor",
+  "paint-strike", "mutant-escape", "wacky-dungeon", "cs-strike-cold-shooters", "dragon-vice-city",
+  "1941-frozen-front", "keep-it-straight", "lime-playground-sandbox", "mighty-action-heroes",
+  "deadly-red-spikes", "bounce-out", "monster-defense-kaf", "massive-multiplayer-platformer",
+  "castle-defender-saga", "snowball-skirmish", "raccoon-adventure-city-simulator-3d",
+  "robot-police-iron-panther", "bomber-friends", "modern-cannon-strike", "siren-head-playing-in-the-forest",
+  "sharkosaurus-rampage", "parkour-master", "the-chick-chase", "short-life-2", "pixel-force",
+  "pixel-stories-2-night-of-payoff"];
+        crazyitems.forEach(item => {
+            const anchor = document.createElement('a');
+            anchor.href = `cg.html?game=${item}`;
+            anchor.textContent = `${item}~cg`;
+            anchor.style.display = 'block';
+            newLinks.push(anchor);
         });
 
-        function filterGames() {
-            const input = document.getElementById('searchInput').value.toLowerCase();
-            const gameLinks = document.querySelectorAll('#gamesList li a');
+        const allLinks = sortLinksAlphabetically(removeDuplicates(newLinks));
 
-            gameLinks.forEach(link => {
-                const gameName = link.textContent.toLowerCase();
-                if (gameName.includes(input)) {
-                    link.style.display = 'block';
-                } else {
-                    link.style.display = 'none';
-                }
-            });
-        }
+        const gamesList = document.getElementById('gamesList');
+        gamesList.innerHTML = '';
 
-        document.getElementById('searchInput').addEventListener('input', filterGames);
-    </script>        
+        allLinks.forEach(link => {
+            if (!link.textContent.startsWith(".")) {
+                gamesList.appendChild(link);             
+            }
+        });
+    });
+
+    function filterGames() {
+        const input = document.getElementById('searchInput').value.toLowerCase();
+        const gameLinks = document.querySelectorAll('#gamesList a');
+
+        gameLinks.forEach(link => {
+            const gameName = link.textContent.toLowerCase();
+            link.style.display = gameName.includes(input) ? 'block' : 'none';
+        });
+    }
+
+    document.getElementById('searchInput').addEventListener('input', filterGames);
+</script>
+
 </body>
 </html>
