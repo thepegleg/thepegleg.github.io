@@ -5,16 +5,17 @@
 
 ## Overview
 
-thepegleg is a gaming website done differently. With a focus on providing unblocked games and tools, it ensures that users can enjoy their favorite games without restrictions.
+thepegleg is a gaming website done differently.
 
 ## Features
 
-- **Pretty much unblockable:** Easily accessable from many access points
-- **Games:** Any game you can have on the web, it's on there
-- **Links:** 1500+ links to proxies and games
-- **Exploits:** Proxies and unblockers
-- **Quick updates:** Ask for whatever, and we will try our best to put it on thepegleg
-- **Ad free forever:** Nothing to distract you from your distractions, ever.
+- **Pretty much unblockable:** Easily accessable from many access points.
+- **Games:** Any game you can have on the web, it's on there.
+- **Links:** 1900+ links to proxies and games.
+- **ChatGPT:** Yep.
+- **Exploits:** Proxies and unblockers, as well as whatever working exploits.
+- **Quick updates:** Ask for whatever, and we will try our best to put it on thepegleg.
+- **Ad free forever:** There should be nothing to distract you from your distractions, ever.
 - **Really cool:** The website is really cool.
 
 ## How to access
