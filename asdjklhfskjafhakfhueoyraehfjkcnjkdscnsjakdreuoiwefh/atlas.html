@@ -38,6 +38,7 @@
         <input type="text" id="searchInput" placeholder="Search games...">
         <ul id="gamesList">
         <a href="eagler/index.html">up-to-date-eagler</a>
+        <a href="n-gon/index.html">n-gon</a>
         </ul>
         <h1>Not-Games</h1>
         <ul id="notGamesList">
@@ -1498,36 +1499,61 @@
     "paint-the-flag",
     "2048-blocks-merge"
 ];
-        crazyitems.forEach(item => {
-            const anchor = document.createElement('a');
-            anchor.href = `cg.html?game=${item}`;
-            anchor.textContent = `${item}~cg`;
-            anchor.style.display = 'block';
-            newLinks.push(anchor);
-        });
+crazyitems.forEach(item => {
+    const anchor = document.createElement('a');
+    anchor.href = `cg.html?game=${item}`;
+    anchor.textContent = `${item}~cg`;
+    anchor.style.display = 'block';
+    newLinks.push(anchor);
+});
 
-        const allLinks = sortLinksAlphabetically(removeDuplicates(newLinks));
 
-        const gamesList = document.getElementById('gamesList');
-        
-        allLinks.forEach(link => {
-            if (!link.textContent.startsWith(".")) {
-                gamesList.appendChild(link);             
-            }
-        });
+const gamesList = document.getElementById('gamesList');
+const existingLinks = Array.from(gamesList.querySelectorAll('a'));
+
+const allLinks = [...existingLinks, ...newLinks];
+
+
+function removeDuplicates(links) {
+    const seen = new Set();
+    return links.filter(link => {
+        const text = link.textContent;
+        if (seen.has(text)) {
+            return false;
+        }
+        seen.add(text);
+        return true;
     });
+}
 
-    function filterGames() {
-        const input = document.getElementById('searchInput').value.toLowerCase();
-        const gameLinks = document.querySelectorAll('#gamesList a');
+const uniqueLinks = removeDuplicates(allLinks);
 
-        gameLinks.forEach(link => {
-            const gameName = link.textContent.toLowerCase();
-            link.style.display = gameName.includes(input) ? 'block' : 'none';
-        });
+function sortLinksAlphabetically(links) {
+    return links.sort((a, b) => a.textContent.localeCompare(b.textContent));
+}
+
+const sortedLinks = sortLinksAlphabetically(uniqueLinks);
+gamesList.innerHTML = ''; 
+sortedLinks.forEach(link => {
+    if (!link.textContent.startsWith(".")) {
+        gamesList.appendChild(link);
     }
+});
 
-    document.getElementById('searchInput').addEventListener('input', filterGames);
+// Function for filtering games
+function filterGames() {
+    const input = document.getElementById('searchInput').value.toLowerCase();
+    const gameLinks = document.querySelectorAll('#gamesList a');
+
+    gameLinks.forEach(link => {
+        const gameName = link.textContent.toLowerCase();
+        link.style.display = gameName.includes(input) ? 'block' : 'none';
+    });
+}
+
+// Event listener for the search input
+document.getElementById('searchInput').addEventListener('input', filterGames);
+
 </script>
 
 </body>
