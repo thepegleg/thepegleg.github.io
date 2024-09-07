@@ -1509,8 +1509,7 @@
         const allLinks = sortLinksAlphabetically(removeDuplicates(newLinks));
 
         const gamesList = document.getElementById('gamesList');
-        gamesList.innerHTML = '';
-
+        
         allLinks.forEach(link => {
             if (!link.textContent.startsWith(".")) {
                 gamesList.appendChild(link);             
