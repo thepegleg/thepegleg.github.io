@@ -120,9 +120,9 @@
 ### [Return to the main page](asdjklhfskjafhakfhueoyraehfjkcnjkdscnsjakdreuoiwefh/index.html)
 </md>
 <md id="thingy"></md>
-    </main>
+</main>
 <script>
-fetch('https://cdn.jsdelivr.net/gh/thepegleg/thepegleg.github.io/README.md')
+fetch('README.md')
 .then(response => {
     if (!response.ok) {
         throw new Error("HTTP error " + response.status);
@@ -133,7 +133,6 @@ fetch('https://cdn.jsdelivr.net/gh/thepegleg/thepegleg.github.io/README.md')
     document.getElementById("thingy").innerHTML = text;
 })
 .catch(error => {
-    // Handle/report error
 });
 </script>
-   <script src="https://cdn.jsdelivr.net/gh/MarketingPipeline/Markdown-Tag/markdown-tag-GitHub.js"></script> 
+<script src="https://cdn.jsdelivr.net/gh/MarketingPipeline/Markdown-Tag/markdown-tag-GitHub.js"></script> 
