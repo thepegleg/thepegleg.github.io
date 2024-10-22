@@ -12,10 +12,10 @@ thepegleg is a gaming website done differently.
 - **Pretty much unblockable:** Easily accessable from many access points.
 - **Games:** 7200+ games, constantly expanding.
 - **Links:** 550+ alive links to proxies and games.
-- **Movies** Movie search and streaming with all your favorites
+- **Movies & Shows** Movie and TV search and streaming with all your favorites.
 - **Exploits:** Proxies and unblockers, as well as whatever working exploits.
 - **Quick updates:** Ask for whatever, and we will try our best to put it on thepegleg.
-- **Ad free forever:** There should be nothing to distract you from your distractions, ever. If I can remove the ads from something, I will
+- **Ad free forever:** There should be nothing to distract you from your distractions, ever. If I can remove the ads from something, I will.
 - **Really cool:** The website is really cool.
 
 ## How to access
