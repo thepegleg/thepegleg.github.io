@@ -119,10 +119,11 @@
 <md>
 ### [Return to the main page](asdjklhfskjafhakfhueoyraehfjkcnjkdscnsjakdreuoiwefh/index.html)
 </md>
-<md id="thingy"></md>
+<github-md id="thingy"></github-md>
 </main>
+<script src="https://cdn.jsdelivr.net/gh/MarketingPipeline/Markdown-Tag/markdown-tag-GitHub.js"></script> 
 <script>
-fetch('README.md')
+fetch('https://pegleg.cbass92.org/README.md')
 .then(response => {
     if (!response.ok) {
         throw new Error("HTTP error " + response.status);
@@ -131,8 +132,142 @@ fetch('README.md')
 })
 .then(text => {
     document.getElementById("thingy").innerHTML = text;
+    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<base href="https://thepegleg.github.io/"/>
+    <title>About</title>
+    <style>
+        body {
+            background-color: #333;
+            color: #ddd;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            font-family: "Rye", serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        header {
+            background-color: #444;
+            padding: 10px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        article {
+            border-bottom: 1px solid #555;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+        }
+
+        article:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        h2 a {
+            color: #007acc;
+            text-decoration: none;
+        }
+
+        h2 a:hover {
+            border-bottom: 1px solid #007acc;
+        }
+        h1 a {
+            color: #007acc;
+            text-decoration: none;
+        }
+
+        h1 a:hover {
+            border-bottom: 1px solid #007acc;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #ffa500;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #d48e31;
+        }
+
+        footer {
+            color: #ddd;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>About thepegleg</h1>
+    </header>
+
+    <main>
+<md>
+### [Return to the main page](asdjklhfskjafhakfhueoyraehfjkcnjkdscnsjakdreuoiwefh/index.html)
+</md>
+<github-md id="thingy"></github-md>
+</main>
+<script src="https://cdn.jsdelivr.net/gh/MarketingPipeline/Markdown-Tag/markdown-tag-GitHub.js"></script> 
+<script>
+fetch('https://pegleg.cbass92.org/README.md')
+.then(response => {
+    if (!response.ok) {
+        throw new Error("HTTP error " + response.status);
+    }
+    return response.text();
+})
+.then(text => {
+    document.getElementById("thingy").innerHTML = text;
+        renderMarkdown();
 })
 .catch(error => {
 });
 </script>
-<script src="https://cdn.jsdelivr.net/gh/MarketingPipeline/Markdown-Tag/markdown-tag-GitHub.js"></script> 
