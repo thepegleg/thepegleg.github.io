@@ -155,8 +155,26 @@
             <p><strong>Unbl0cker for GoGaurdian prisoners</strong></p>
         </article>
         <article>
-            <h2><a href="https://nada.cbass92.org" >pegleg pr0xy</a></h2>
-            <p><strong>W Pr0xy. Fast, working, server.</strong></p>
+            <h2>
+                <a onclick="openProxy()">pegleg pr0xy</a>
+            </h2>
+            
+            <script>
+                function openProxy() {
+                    const w = window.open();
+                    w.document.write(`
+                        <html>
+                            <head>
+                                <title>Proxy</title>
+                            </head>
+                            <body>
+                                <iframe src="https://nada.cbass92.org/" width="100%" height="100%" ></iframe>
+                            </body>
+                        </html>
+                    `);
+                }
+            </script>
+                        <p><strong>W Pr0xy. Fast, working, server. Opens in new about:blank</strong></p>
         </article>
         <article>
             <h2><a href="https://doge.cbass92.org" target="_blank">Pr0xy (doge)</a></h2>
