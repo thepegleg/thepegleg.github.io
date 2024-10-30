@@ -14,7 +14,7 @@
         <script>
             let params = new URLSearchParams(window.location.search);
             let name = params.get("game");
-            let type = params.get("c");
+            let type = params.get("type");
             if (name) {
                 EJS_player = "#game";
             EJS_core = decodeURIComponent(type);
