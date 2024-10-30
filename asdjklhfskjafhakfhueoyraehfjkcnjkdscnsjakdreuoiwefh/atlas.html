@@ -8172,8 +8172,8 @@ famobi.forEach(item => {
 "https://archive.org/download/CylesNDSUSRomPack/Cyles%27%20NDS%20US%20Rom%20Pack.zip/Zoo%20Tycoon%202%20DS%20%28U%29%28XenoPhobia%29.nds"]
 nds.forEach(item => {
             const anchor = document.createElement('a');
-            anchor.href = `nds.html?game=` + encodeURI(item);
-            anchor.textContent = decodeURI(item.slice(86)) + `~nds`;
+            anchor.href = `nds.html?game=` + encodeURIComponent(item);
+            anchor.textContent = decodeURIComponent(item.slice(86)) + `~nds`;
             anchor.style.display = 'block';
             newLinks.push(anchor);
         });

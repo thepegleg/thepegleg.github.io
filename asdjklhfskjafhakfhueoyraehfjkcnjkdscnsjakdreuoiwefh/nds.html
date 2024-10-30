@@ -18,7 +18,7 @@
                 EJS_player = "#game";
             EJS_core = "nds";
             EJS_pathtodata = "https://cdn.emulatorjs.org/stable/data/";
-                EJS_gameUrl = "https://cors-anywhere-bn18.onrender.com/" + name;
+                EJS_gameUrl = "https://cors-anywhere-bn18.onrender.com/" + decodeURIComponent(name);
       } else {
           console.error("No game name specified in the URL.");
       }
