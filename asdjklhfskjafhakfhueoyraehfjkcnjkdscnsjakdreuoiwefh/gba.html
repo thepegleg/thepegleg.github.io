@@ -14,10 +14,9 @@
         <script>
             let params = new URLSearchParams(window.location.search);
             let name = params.get("game");
-            let type = params.get("type");
             if (name) {
                 EJS_player = "#game";
-            EJS_core = decodeURIComponent(type);
+            EJS_core = 'gba';
             EJS_pathtodata = "https://cdn.emulatorjs.org/stable/data/";
                 EJS_gameUrl = "https://cors-anywhere-bn18.onrender.com/" + decodeURIComponent(name);
       } else {
