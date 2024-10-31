@@ -9661,7 +9661,7 @@ gba.forEach(item => {
 gbc.forEach(item => {
             const anchor = document.createElement('a');
             anchor.href = `gbc.html?game=` + encodeURIComponent(item);
-            anchor.textContent = decodeURIComponent(item.slice(108).slice(0, -4)) + `~gbc`;
+            anchor.textContent = decodeURIComponent(item.slice(107).slice(0, -4)) + `~gbc`;
             anchor.style.display = 'block';
             newLinks.push(anchor);
         });
