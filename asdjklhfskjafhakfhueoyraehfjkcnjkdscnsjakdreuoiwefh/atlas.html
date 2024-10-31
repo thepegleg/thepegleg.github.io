@@ -9660,7 +9660,7 @@ gba.forEach(item => {
 "https://archive.org/download/CylesGameBoyColorRomPack/Cyles%27%20Game%20Boy%20Color%20Rom%20Pack.zip/USA%2FZoboomafoo%20-%20Playtime%20in%20Zobooland%20%28USA%29.zip"]
 gbc.forEach(item => {
             const anchor = document.createElement('a');
-            anchor.href = `gba.html?game=` + encodeURIComponent(item);
+            anchor.href = `gbc.html?game=` + encodeURIComponent(item);
             anchor.textContent = decodeURIComponent(item.slice(108).slice(0, -4)) + `~gbc`;
             anchor.style.display = 'block';
             newLinks.push(anchor);
