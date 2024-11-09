@@ -10,7 +10,8 @@ thepegleg is a gaming website done differently.
 ## Features
 
 - **Pretty much unblockable:** Easily accessable from many access points.
-- **Games:** 10000+ games, constantly expanding.
+- **Games:** ~11000 games, constantly expanding.
+- **Proxies:** ~950+ proxy links, regularly scraped from the rammerhead discord.
 - **Links:** 550+ alive links to proxies and games.
 - **Movies & Shows** Movie and TV search and streaming with all your favorites.
 - **Exploits:** Proxies and unblockers, as well as whatever working exploits.
