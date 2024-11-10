@@ -31,7 +31,7 @@
         <h1>Welcome to Atlas</h1>
         <h2><a href="index.html">Home</a></h2>
         <small><h3 id="jokes">Random Joke: </h3></small>
-        <h2>Game sources: 3kh0, selenite.cc, crazygames, armorgames, coolmathgames, Cyles, Evil Walrus, & N1FEAREDWOLF</h2>
+        <h2>Game sources: 3kh0, selenite, crazygames, armorgames, coolmathgames, Cyles, Evil Walrus, & N1FEAREDWOLF</h2>
         <h1>Games (May take a sec to load) </h1>
         <input type="text" id="searchInput" placeholder="Search games..."><label>(Press enter to search)</label>
         <ul id="gamesList">
@@ -297,26 +297,12 @@ document.getElementById('jokes').innerHTML += jokes[Math.floor(Math.random() * j
     function sortLinksAlphabetically(links) {
         return links.sort((a, b) => a.textContent.localeCompare(b.textContent));
     }
-    
-    function removeDuplicates(links) {
-        const uniqueLinks = [];
-        const linkMap = new Map();
-    
-        links.forEach(link => {
-            const folderName = link.textContent.trim();
-            if (!linkMap.has(folderName)) {
-                linkMap.set(folderName, true);
-                uniqueLinks.push(link);
-            }
-        });
-    
-        return uniqueLinks;
-    }
+
     
     const repoUrls = [
         'https://api.github.com/repos/sebastian-92/game-assets/contents',
         'https://api.github.com/repos/WhoIsEv/relivedassets/contents',
-        'https://api.github.com/repos/selenite-cc/selenite-old/contents'
+        'https://api.github.com/repos/sebastian-92/selenite1/contents/semag'
     ];
     
     Promise.all(repoUrls.map(repoUrl => {
@@ -329,21 +315,20 @@ document.getElementById('jokes').innerHTML += jokes[Math.floor(Math.random() * j
     })).then(([gameAssetsData, relivedAssetsData, seleniteAssetsData]) => {
         const newLinks = [];
         
-        function addNewLinks(repoData, baseUrl) {
+        function addNewLinks(repoData, baseUrl, nameExt) {
             repoData.forEach(item => {
                 if (item.type === 'dir') {
                     const anchor = document.createElement('a');
                     anchor.href = `${baseUrl}/${item.path}/index.html`;
-                    anchor.textContent = item.name.replace(/-/g, " ");
+                    anchor.textContent = item.name.replace(/-/g, " ")+nameExt;
                     anchor.style.display = 'block';
                     newLinks.push(anchor);
                 }
             });
         }        // Add game assets from GitHub repos
-        addNewLinks(gameAssetsData, 'https://raw.githack.com/sebastian-92/game-assets/fixy');
-        addNewLinks(relivedAssetsData, 'https://rawcdn.githack.com/WhoIsEv/relivedassets/44f39fe159e6a10993104f9779b93bf51c8f30a7');
-        addNewLinks(seleniteAssetsData, 'https://raw.githack.com/selenite-cc/selenite-old/master');
-        
+        addNewLinks(gameAssetsData, 'https://raw.githack.com/sebastian-92/game-assets/fixy', '~pegleg/3kh0');
+        addNewLinks(relivedAssetsData, 'https://rawcdn.githack.com/WhoIsEv/relivedassets/tree/main/', '~relivedassets');
+        addNewLinks(seleniteAssetsData, 'https://rawcdn.githack.com/sebastian-92/selenite1/tree/main/semag', '~selenite');
         // Add crazyitems links
         const crazyitems = [    "ragdoll-archers",
     "cg-fc-24",
@@ -10775,7 +10760,7 @@ mame2003.forEach(item => {
             anchor.style.display = 'block';
             newLinks.push(anchor);
         });
-const allLinks = sortLinksAlphabetically(removeDuplicates(newLinks));        
+const allLinks = sortLinksAlphabetically(newLinks);        
 const gamesList = document.getElementById('gamesList');
         allLinks.forEach(link => {
             if (!link.textContent.startsWith(".")) {
@@ -10833,6 +10818,6 @@ document.getElementById('searchInput').addEventListener('keydown', function(even
     }
 });
 
-</script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"8df5dba40e18071f","version":"2024.10.4","r":1,"token":"93e9951688af41ff8fd11cbe84263253","serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}}}' crossorigin="anonymous"></script>
+</script>
 </body>
 </html>
