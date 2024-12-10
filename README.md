@@ -11,7 +11,7 @@ thepegleg is a gaming website done differently.
 
 - **Pretty much unblockable:** Easily accessable from many access points.
 - **Games:** ~11000 games, constantly expanding.
-- **Proxies:** ~950+ proxy links, regularly scraped from the rammerhead discord.
+- **Proxies:** ~1900 proxy links, regularly scraped from the rammerhead discord.
 - **Links:** 550+ alive links to proxies and games.
 - **Movies & Shows** Movie and TV search and streaming with all your favorites.
 - **Exploits:** Proxies and unblockers, as well as whatever working exploits.
@@ -22,7 +22,7 @@ thepegleg is a gaming website done differently.
 
 ## How to access
 ### Go to any of the following access points and follow instructions 
-- [pegleg.cbass92.org](https://pegleg.cbass92.org) click on the word Atlas on the 404 page.
+- [pegleg.cbass92.org](https://pegleg.cbass92.org) click on the word Atlas on the 404 page. 
 - [TYPE ANYTHING RIGHT HERE.cbass92.org](http://hfkjsdhfskjdfhsjfh.cbass92.org) Above
 - https://fishsounds.fishfx.com	(freedns)
 - https://ima.logical-hazard.ro (freedns)
@@ -38,8 +38,10 @@ thepegleg is a gaming website done differently.
 ### freedns.afraid.org (SUPER EASY
 Create an A record with `209.46.123.68` as the IP
 #### note: use the non default domains, the others are usually auto blocked
+
 ### Use a template
-Easiest way, follow instructions at [ThePlank](https://github.com/sebastian-92/ThePlank/README.md)
+Easy way, follow instructions at [ThePlank](https://github.com/sebastian-92/ThePlank/README.md)
+
 ### Custom access point
 To make a custom access point, put this html anywhere on your website. the only thing you can't edit is the link, everything else should be fine:
 ```
@@ -51,6 +53,9 @@ Put this in your bookmarks bar:
 ```
 javascript:(function(){var newTab = window.open('about:blank');newTab.document.write('<head><title>Classroom</title><link rel=\'icon\' type=\'image/png\' href=\'gc.png\'></head><embed allowfullscreen=\'true\' src=\'https://thepegleg.github.io/asdjklhfskjafhakfhueoyraehfjkcnjkdscnsjakdreuoiwefh/index.html\' style=\'position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;\'>');})()
 ```
+
+## Using on your own server
+PLEASE contact me before doing so
 
 ## Contributing
 
