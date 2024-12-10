@@ -23,12 +23,21 @@ thepegleg is a gaming website done differently.
 ## How to access
 ### Go to any of the following access points and follow instructions 
 - [pegleg.cbass92.org](https://pegleg.cbass92.org) click on the word Atlas on the 404 page.
-- [TYPE ANYTHING RIGHT HERE.cbass92.org](http://hfkjsdhfskjdfhsjfh.cbass92.org) Above, except unblockable and hosted on our server.
+- [TYPE ANYTHING RIGHT HERE.cbass92.org](http://hfkjsdhfskjdfhsjfh.cbass92.org) Above
+- https://fishsounds.fishfx.com	(freedns)
+- https://ima.logical-hazard.ro (freedns)
+- https://helpi.lostbytes.me (freedns)
+- https://alpha.malewolf.com (freedns)
+- https://joe.sleepgate.im (freedns)
 - [sciency.scienceontheweb.net](https://sciency.scienceontheweb.net) type in 69420 and click on the results in the calc.
 - [goldengrain.rf.gd](http://goldengrain.rf.gd/) Click the on 1995 in the about section
 - [wtech.42web.io](http://wtech.42web.io/) Click on cybersecurity in the service section
 
+
 ## Make your own access point
+### freedns.afraid.org (SUPER EASY
+Create an A record with `209.46.123.68` as the IP
+#### note: use the non default domains, the others are usually auto blocked
 ### Use a template
 Easiest way, follow instructions at [ThePlank](https://github.com/sebastian-92/ThePlank/README.md)
 ### Custom access point
