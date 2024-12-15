@@ -10762,27 +10762,27 @@ mame2003.forEach(item => {
             newLinks.push(anchor);
         });
         // 3kh0 lite
-      fetch("https://lite.3kh0.net/config/games.json")
-      .then((response) => response.json())
-      .then((data) => {
-        data.forEach((project) => {
-            const anchor = document.createElement('a');
-            anchor.href = 'https://lite.3kh0.net/'+project.link;
-            anchor.textContent = project.title + `~3kh0lite`;
-            anchor.style.display = 'block';
-            newLinks.push(anchor);
-        
-      })})
-        .catch((error) => console.error("Error:", error));
+fetch("https://lite.3kh0.net/config/games.json")
+  .then((response) => response.json())
+  .then((data) => {
+    data.forEach((project) => {
+      const anchor = document.createElement('a');
+      anchor.href = 'https://lite.3kh0.net/' + project.link;
+      anchor.textContent = project.title + `~3kh0lite`;
+      anchor.style.display = 'block';
+      newLinks.push(anchor);
+    });
+  }).then(() => {
         // end of link dbs
-const allLinks = sortLinksAlphabetically(newLinks);        
+const allLinks = sortLinksAlphabetically(newLinks);     
+console.log(allLinks)   
 const gamesList = document.getElementById('gamesList');
         allLinks.forEach(link => {
-            if (!link.textContent.startsWith(".")) {
                 gamesList.appendChild(link);             
             }
-        });
-    });    
+        );
+    })}).catch((error) => console.error("Error:", error));
+
 
 let debounceTimeout;
 let lastQuery = '';
