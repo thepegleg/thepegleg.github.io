@@ -1,4 +1,5 @@
 self.__uv$config = {
+    prefix: '/static/tiw/',
     bare:'https://tomp.app',
     encodeUrl: Ultraviolet.codec.xor.encode,
     decodeUrl: Ultraviolet.codec.xor.decode,
