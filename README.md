@@ -32,13 +32,13 @@ thepegleg is a gaming website done differently.
 - [sciency.scienceontheweb.net](https://sciency.scienceontheweb.net) type in 69420 and click on the results in the calc.
 - [goldengrain.rf.gd](http://goldengrain.rf.gd/) Click the on 1995 in the about section
 - [wtech.42web.io](http://wtech.42web.io/) Click on cybersecurity in the service section
-
+- [join the discord for more links](https://discord.gg/8Es3wpnPWd) please
 
 ## Make your own access point
-### freedns.afraid.org (SUPER EASY
+### freedns.afraid.org (SUPER EASY) (Now with SSL!)
 Create an A record with `209.46.123.68` as the IP
 #### note: use the non default domains, the others are usually auto blocked
-
+#### other note: I can see what domains you use, and they will be added to the public domain list
 ### Use a template
 Easy way, follow instructions at [ThePlank](https://github.com/sebastian-92/ThePlank/README.md)
 

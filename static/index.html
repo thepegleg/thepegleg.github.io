@@ -3,35 +3,40 @@
    <head>
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+      <link rel="stylesheet" href="index.css">
+      <script type="text/javascript" src="//counter.websiteout.net/js/7/10/5/0"></script>
+      <link rel="shortcut icon" type="image/jpg" href="~/favicon.ico"/>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
    </head>
-   <body style="margin: 0; font-family: Arial, sans-serif; background-color: #121212; color: #ffffff;">
-      <div id="header" style="background-color: #1e1e1e; padding: 10px; display: flex; align-items: center;">
-         <img src="/favicon.ico" alt="Logo" style="height: 40px;">
+   <body>
+      <div id="header">
+         <img src="logo.gif" alt="Logo">
       </div>
-      <div id="content" style="padding: 20px;">
-         <h1 style="font-size: 24px; text-align: center; color: #ffffff;">pegleg proxy</h1>
+      <div id="content">
+         <h1>Search the Web and use the BEST static proxy!</h1>
 
-         <form id="uv-form" style="margin-top: 20px; display: flex; justify-content: center;">
-            <input id="uv-search-engine" value="https://www.google.com/search?q=%s" type="hidden"/>
-            <input id="uv-address" type="text" placeholder="Search Google or type an URL" class="form__input" style="padding: 10px; width: 80%; border: 1px solid #444; border-radius: 4px; background-color: #1e1e1e; color: #ffffff;"/>
-         </form>
-
-         <div class="desc left-margin" style="margin-top: 20px; text-align: center;">
-            <p id="uv-error" style="color: #ff6b6b; font-size: 14px;"></p>
-            <pre id="uv-error-code" style="background-color: #1e1e1e; padding: 10px; border: 1px solid #333; display: inline-block; text-align: left; color: #ffffff;"></pre>
-         </div>
+         <form id="uv-form"">
+            <input id="uv-search-engine" value="https://www.google.com/search?q=%s" type="hidden"/> 
+            <input id="uv-address" type="text" placeholder="Search Google or type an URL" class="form__input"/>
+          </form>
+          <div class="desc left-margin">
+            <p id="uv-error"></p>
+            <pre id="uv-error-code"></pre>
+          </div>
+         <a href="https://discord.gg/zJhPJYJCeJ" target="_blank" class="fa-brands fa-discord"></a>
+         <a href="https://github.com/TheTIW/UV-Static" target="_blank"class="fa-brands fa-github"></a>
+         <a href="https://starttiw.org" target="_blank"class="fa-solid fa-cloud"></a>
       </div>
-
       <script src="uv/uv.bundle.js" defer></script>
       <script src="uv/uv.config.js" defer></script>
       <script src="register-sw.js" defer></script>
       <script src="search.js" defer></script>
       <script src="index.js" defer></script>
       <script src="error.js" defer></script>
-
-      <div id="footer" style="background-color: #1e1e1e; padding: 10px; text-align: center; position: absolute; bottom: 0; width: 100%;">
-         <p style="margin: 0; font-size: 14px; color: #ffffff;">credit to TIW for static proxy</p>
+      <div id="footer">
+         <p>&copy; 2023 TIW. All rights reserved.</p>
       </div>
    </body>
 </html>
-
