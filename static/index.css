@@ -4,6 +4,9 @@ body {
   color: #fff;
   margin: 0;
   padding: 0;
+  font-family: "Rye", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 #header {
@@ -15,7 +18,6 @@ body {
 #header h1 {
   margin: 0;
   font-size: 24px;
-  font-family: 'Arial', sans-serif;
   color: #fff;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -36,7 +38,6 @@ body {
   font-size: 24px;
   cursor:pointer;
   text-transform: uppercase;
-  font-family: 'Open Sans', sans-serif;
   line-height: 1.5;
   margin-bottom: 20px;
 }
