@@ -11,11 +11,11 @@ thepegleg is a gaming website done differently.
 
 - **Pretty much unblockable:** Easily accessable from many access points.
 - **Games:** ~11000 games, constantly expanding.
-- **Proxies:** ~1900 proxy links, regularly scraped from the rammerhead discord.
-- **Links:** 550+ alive links to proxies and games.
+- **Built in proxy:** Ultraviolet proxy is built in (credit to TIW)
+- **Proxy links:** ~1900 proxy links, regularly scraped from discord & skipschool.
 - **Movies & Shows** Movie and TV search and streaming with all your favorites.
-- **Exploits:** Proxies and unblockers, as well as whatever working exploits.
 - **Chatgpt:** Unblocked and working AI.
+- **Chat:** Interact with thepegleg discord, on the site
 - **Quick updates:** Ask for whatever, and we will try our best to put it on thepegleg.
 - **Ad free forever:** There should be nothing to distract you from your distractions, ever. If I can remove the ads from something, I will.
 - **Really cool:** The website is really cool.
