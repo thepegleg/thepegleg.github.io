@@ -35,8 +35,8 @@ thepegleg is a gaming website done differently.
 - [join the discord for more links](https://discord.gg/8Es3wpnPWd) please
 
 ## Make your own access point
-### freedns.afraid.org (SUPER EASY) (Now with SSL!)
-Create an A record with `209.46.123.68` as the IP
+### freedns.afraid.org (SUPER EASY) (Now with SSL!) (New server!)
+Create an A record with `104.36.86.105` as the IP
 #### note: use the non default domains, the others are usually auto blocked
 #### other note: I can see what domains you use, and they will be added to the public domain list
 ### Use a template
