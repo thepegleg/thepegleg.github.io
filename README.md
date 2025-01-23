@@ -15,6 +15,8 @@ thepegleg is a gaming website done differently.
 - **Proxy links:** ~1900 proxy links, regularly scraped from discord & skipschool.
 - **Movies & Shows** Movie and TV search and streaming with all your favorites.
 - **Chatgpt:** Unblocked and working AI.
+- **Reddit:** teddit instance hosted by us
+- **TikTok:** sticktok, proxied through us
 - **Chat:** Interact with thepegleg discord, on the site
 - **Quick updates:** Ask for whatever, and we will try our best to put it on thepegleg.
 - **Ad free forever:** There should be nothing to distract you from your distractions, ever. If I can remove the ads from something, I will.
@@ -32,7 +34,7 @@ thepegleg is a gaming website done differently.
 - [sciency.scienceontheweb.net](https://sciency.scienceontheweb.net) type in 69420 and click on the results in the calc.
 - [goldengrain.rf.gd](http://goldengrain.rf.gd/) Click the on 1995 in the about section
 - [wtech.42web.io](http://wtech.42web.io/) Click on cybersecurity in the service section
-- [join the discord for more links](https://discord.gg/8Es3wpnPWd) please
+- [join the discord for TONS more links](https://discord.gg/8Es3wpnPWd) please
 
 ## Make your own access point
 ### freedns.afraid.org (SUPER EASY) (Now with SSL!) (New server!)
@@ -45,7 +47,7 @@ Easy way, follow instructions at [ThePlank](https://github.com/sebastian-92/TheP
 ### Custom access point
 To make a custom access point, put this html anywhere on your website. the only thing you can't edit is the link, everything else should be fine:
 ```
-<a href="javascript:void(0);" onclick="var newTab = window.open('about:blank'); newTab.document.write('<head><title>Classroom</title><link rel=\'icon\' type=\'image/png\' href=\'gc.png\'></head><embed allowfullscreen=\'true\'src=\'https://thepegleg.github.io/asdjklhfskjafhakfhueoyraehfjkcnjkdscnsjakdreuoiwefh/index.html\' style=\'position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;\'>'); return false;" style="text-decoration: none;">Atlas</a>
+<a href="javascript:void(0);" onclick="var newTab = window.open('about:blank'); newTab.document.write('<head><title>Classroom</title><link rel=\'icon\' type=\'image/png\' href=\'gc.png\'></head><embed allowfullscreen=\'true\'src=\'https://hfhjdkfghsdfkjghsdfjkhg.cbass92.org/asdjklhfskjafhakfhueoyraehfjkcnjkdscnsjakdreuoiwefh/index.html\' style=\'position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;\'>'); return false;" style="text-decoration: none;">Atlas</a>
 ```
 
 ### Bookmarklet
