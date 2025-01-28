@@ -3,6 +3,19 @@
   <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     <title>Site not found &middot; GitHub Pages</title>
+    <script src="/static/uv/uv.bundle.js" defer></script>
+    <script src="/static/uv.config.js" defer></script>
+    <script src="/static/register-sw.js" defer></script>
+    <script>
+   try {
+    await registerSW();
+    console.log('sw registered')
+  } catch (err) {
+    error.textContent = "Failed to register service worker.";
+    errorCode.textContent = err.toString();
+    throw err;
+  }
+    </script>
     <style type="text/css" media="screen">
       body {
         background-color: #f1f1f1;
@@ -46,24 +59,6 @@
       }
 
     </style>
-    <link rel="manifest" href="./pwa.json">
-    <script>
-        if ('serviceWorker' in navigator) {
-            // Register Service Worker on page load (if not registered before)
-            self.addEventListener('load', async () => {
-                const container = navigator.serviceWorker;
-                container.addEventListener(
-                    'controllerchange',
-                    () => console.log(`SW is changed (installed or removed).`)
-                );
-                if (container.controller === null) {
-                    console.log(`Register new SW for the app.`);
-                    await container.register('sw.js');
-                    console.log(`SW is registered.`);
-                } else console.log(`SW is already registered.`);
-            });
-        }
-    </script>
   </head>
   <body>
 
