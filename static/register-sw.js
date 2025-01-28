@@ -28,3 +28,13 @@ async function registerSW() {
     scope: __uv$config.prefix,
   });
 }
+try {
+  registerSW().then(() => {
+    console.log('sw registered')
+  })
+  
+} catch (err) {
+  console.log("Failed to register service worker.");
+  console.error(err)
+  throw err;
+}
