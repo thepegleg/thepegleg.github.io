@@ -8,8 +8,10 @@
     <script src="/static/register-sw.js" defer></script>
     <script>
    try {
-    registerSW();
-    console.log('sw registered')
+    registerSW().then(() => {
+      console.log('sw registered')
+    })
+    
   } catch (err) {
     console.log("Failed to register service worker.");
     console.error(err)
