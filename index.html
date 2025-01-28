@@ -8,7 +8,7 @@
     <script src="/static/register-sw.js" defer></script>
     <script>
    try {
-    await registerSW();
+    registerSW();
     console.log('sw registered')
   } catch (err) {
     console.log("Failed to register service worker.");
