@@ -4,15 +4,15 @@
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     <title>Site not found &middot; GitHub Pages</title>
     <script src="/static/uv/uv.bundle.js" defer></script>
-    <script src="/static/uv.config.js" defer></script>
+    <script src="/static/uv/uv.config.js" defer></script>
     <script src="/static/register-sw.js" defer></script>
     <script>
    try {
     await registerSW();
     console.log('sw registered')
   } catch (err) {
-    error.textContent = "Failed to register service worker.";
-    errorCode.textContent = err.toString();
+    console.log("Failed to register service worker.");
+    console.error(err)
     throw err;
   }
     </script>
