@@ -10,7 +10,7 @@ thepegleg is a gaming website done differently.
 ## Features
 
 - **Pretty much unblockable:** Easily accessable from many access points.
-- **Games:** ~11000 games, constantly expanding.
+- **Games:** ~14,665 games, constantly expanding.
 - **Built in proxy:** Ultraviolet proxy is built in (credit to TIW)
 - **Proxy links:** ~1900 proxy links, regularly scraped from discord & skipschool.
 - **Movies & Shows** Movie and TV search and streaming with all your favorites.
@@ -25,15 +25,6 @@ thepegleg is a gaming website done differently.
 ## How to access
 ### Go to any of the following access points and follow instructions 
 - [pegleg.cbass92.org](https://pegleg.cbass92.org) click on the word Atlas on the 404 page. 
-- [TYPE ANYTHING RIGHT HERE.cbass92.org](http://hfkjsdhfskjdfhsjfh.cbass92.org) Above
-- http://fishsounds.fishfx.com	(freedns)
-- http://ima.logical-hazard.ro (freedns)
-- http://helpi.lostbytes.me (freedns)
-- http://alpha.malewolf.com (freedns)
-- http://joe.sleepgate.im (freedns)
-- [sciency.scienceontheweb.net](https://sciency.scienceontheweb.net) type in 69420 and click on the results in the calc.
-- [goldengrain.rf.gd](http://goldengrain.rf.gd/) Click the on 1995 in the about section
-- [wtech.42web.io](http://wtech.42web.io/) Click on cybersecurity in the service section
 - [join the discord for TONS more links](https://discord.gg/8Es3wpnPWd) please
 
 ## Make your own access point
