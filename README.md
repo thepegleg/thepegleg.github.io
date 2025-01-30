@@ -10,7 +10,7 @@ thepegleg is a gaming website done differently.
 ## Features
 
 - **Pretty much unblockable:** Easily accessable from many access points.
-- **Games:** ~18,000 games, constantly expanding.
+- **Games:** ~23,000 games, constantly expanding.
 - **Built in proxy:** Ultraviolet proxy is built in (credit to TIW)
 - **Proxy links:** ~1900 proxy links, regularly scraped from discord & skipschool.
 - **Movies & Shows** Movie and TV search and streaming with all your favorites.
