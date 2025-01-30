@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <style>
+      html, body {
+          height: 100%;
+          margin: 0;
+          padding: 0;
+      }
+      body {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          overflow: hidden;
+      }
+      embed {
+          width: 100%;
+          height: 100%;
+      }
+    </style>
+  <body>
+    <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+    <script>
+      let params = new URLSearchParams(window.location.search);
+      let name = params.get("game");
+      if (name) {
+          const embed = document.createElement("embed");
+          embed.frameborder = "0";
+          embed.src = "https://nw.cbass92.org/" + name + "?hidegui=1";
+          document.body.appendChild(embed);
+      } else {
+          console.error("No game name specified in the URL.");
+      }
+    </script><script></script>
+  </body>
+</html>
