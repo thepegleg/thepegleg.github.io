@@ -31,7 +31,7 @@ thepegleg is a gaming website done differently.
 
 - [pegleg.cbass92.org](https://pegleg.cbass92.org) click on the word Atlas on the 404 page.
 - [join the discord for more links](https://discord.gg/8Es3wpnPWd) please
-- [or, you can try it by clicking here](https://pegleg.cbass92.org/embed.html)
+- ### [or, you can try it out by clicking here](https://sdfsdf.cbass92.org/asdjklhfskjafhakfhueoyraehfjkcnjkdscnsjakdreuoiwefh/embed.html)
 
 ## Make your own access point
 
