@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>92vids</title>
+    <style>
+        body {
+          font-family: "Ubuntu", sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: white;
+        }
+        .search-container {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+            top: 0;
+            width: 100%;
+        }
+        .search-bar {
+            width: 300px;
+            padding: 10px;
+            border: 2px solid #BB86FC;
+            border-radius: 25px;
+            outline: none;
+            font-size: 16px;
+            background-color: #1E1E1E;
+            color: white;
+        }
+        .search-button {
+            right: 5px;
+            top: 5px;
+            border: none;
+            background-color: #BB86FC;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .search-button:hover {
+            background-color: #9B59B6;
+        }
+    </style>
+</head>
+<body>
+<script>
+var base = 'https://api.themoviedb.org/3/search/tv?';
+var key = 'ae4bd1b6fce2a5648671bfc171d15ba4';
+async function search() {
+    var query = encodeURIComponent(document.getElementById('search-input').value);
+    var url = base + 'query=' + query + '&api_key=' + key;
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        if (data.results.length > 0) {
+          document.getElementById('results').innerHTML='';
+            for (i in data.results) {
+    			result(data.results[i]);
+			}
+        } else {
+          document.getElementById('results').innerHTML='No results, sorry.';
+        }
+
+    } catch (error) {
+        document.getElementById('results').innerHTML='Error fetching data:' + error;
+    }
+}
+function result(json) {
+    document.getElementById('results').innerHTML += '<a href="seriesplay.html?id=' + json.id + '"><img src="https://image.tmdb.org/t/p/w500' + json.poster_path + '" width="20%" height="auto"></a>';
+}
+</script>
+    <div class="search-container">
+        <input type="text" class="search-bar" id="search-input" placeholder="Search for series...">
+        <button class="search-button" onclick='search()'>🔍</button>
+    </div>
+    <div id="results"></div>
+
+</body>
+</html>
