@@ -31,7 +31,8 @@ thepegleg is a gaming website done differently.
 
 - [pegleg.cbass92.org](https://pegleg.cbass92.org) click on the word Atlas on the 404 page.
 - [join the discord for more links](https://discord.gg/8Es3wpnPWd) please
-- ### [or, you can try it out by clicking here](https://sdfsdf.cbass92.org/asdjklhfskjafhakfhueoyraehfjkcnjkdscnsjakdreuoiwefh/embed.html)
+
+### [or, you can try it out by clicking here](https://sdfsdf.cbass92.org/asdjklhfskjafhakfhueoyraehfjkcnjkdscnsjakdreuoiwefh/embed.html)
 
 ## Make your own access point
 
@@ -53,14 +54,6 @@ To make a custom access point, put this html anywhere on your website. the only 
 
 ```
 <a href="javascript:void(0);" onclick="var newTab = window.open('about:blank'); newTab.document.write('<head><title>Classroom</title><link rel=\'icon\' type=\'image/png\' href=\'gc.png\'></head><embed allowfullscreen=\'true\'src=\'https://hfhjdkfghsdfkjghsdfjkhg.cbass92.org/asdjklhfskjafhakfhueoyraehfjkcnjkdscnsjakdreuoiwefh/index.html\' style=\'position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;\'>'); return false;" style="text-decoration: none;">Atlas</a>
-```
-
-### Bookmarklet
-
-Put this in your bookmarks bar:
-
-```
-javascript:(function(){var newTab = window.open('about:blank');newTab.document.write('<head><title>Classroom</title><link rel=\'icon\' type=\'image/png\' href=\'gc.png\'></head><embed allowfullscreen=\'true\' src=\'https://thepegleg.github.io/asdjklhfskjafhakfhueoyraehfjkcnjkdscnsjakdreuoiwefh/index.html\' style=\'position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;\'>');})()
 ```
 
 ## Using on your own server
