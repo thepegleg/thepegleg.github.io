@@ -58,8 +58,13 @@ We are really, really open to contributors. Just make an issue saying what you w
 
 - Project Lead: [Cbass92]
 - Contributors: [elsgcreate]
-- Game sources: Crazygames, 3kh0 assets, 3kh0 relived, armorgames, coolmathgames, stickpage.com, flash in the pan, flashpoint, y8.
-
+- Game sources: Crazygames, 3kh0 assets, 3kh0 relived, 3kh0 lite, armorgames, coolmathgames, stickpage.com, flash in the pan, flashpoint, y8, nettleweb.
+- Credit to TIW and titanium network for [Ultraviolet static
+- Credit to bharadwajpro for https://bharadwajpro.github.io/m3u8-player, used in vids
+- Credit to Rob--W for https://github.com/Rob--W/cors-anywhere, which is used to load games
+- Credit to [teddit](https://codeberg.org/teddit/teddit)
+- Credit to [StickTok](https://github.com/PrivacySafe/sticktock)
+  
 ## License
 
-This project is licensed under the [RACL License](LICENSE).
+This project is licensed under the [GNU AGPLv3 License](LICENSE).
