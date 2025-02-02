@@ -1,3 +1,6 @@
+alert(
+  "if it doesn't load for 10 seconds, try right clicking and reloading frame"
+);
 let params = new URLSearchParams(window.location.search);
 let movid = params.get("id");
 let streamurl;
