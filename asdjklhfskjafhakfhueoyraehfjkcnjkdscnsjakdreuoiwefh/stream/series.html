@@ -47,9 +47,24 @@
     </style>
 </head>
 <body>
+    <div class="search-container">
+        <input type="text" class="search-bar" id="search-input" placeholder="Search for series...">
+    </div>
+    <div id="results"></div>
 <script>
 var base = 'https://api.themoviedb.org/3/search/tv?';
 var key = 'ae4bd1b6fce2a5648671bfc171d15ba4';
+// Get a reference to the input element
+const inputElement = document.getElementById("search-input");
+
+// Add an event listener for the 'keydown' event
+inputElement.addEventListener("keydown", function(event) {
+  // Check if the pressed key is 'Enter' (key code 13)
+  if (event.key === "Enter" || event.keyCode === 13) {
+    // Call your function here
+    search();
+  }
+});
 async function search() {
     var query = encodeURIComponent(document.getElementById('search-input').value);
     var url = base + 'query=' + query + '&api_key=' + key;
@@ -77,11 +92,6 @@ function result(json) {
     document.getElementById('results').innerHTML += '<a href="seriesplay.html?id=' + json.id + '"><img src="https://image.tmdb.org/t/p/w500' + json.poster_path + '" width="20%" height="auto"></a>';
 }
 </script>
-    <div class="search-container">
-        <input type="text" class="search-bar" id="search-input" placeholder="Search for series...">
-        <button class="search-button" onclick='search()'>🔍</button>
-    </div>
-    <div id="results"></div>
 
 </body>
 </html>
