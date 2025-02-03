@@ -17,7 +17,7 @@ if (movid) {
         streamurl = validsources[0].url;
         const embed = document.createElement("embed");
         embed.frameborder = "0";
-        embed.src = "player/index.html?videourl=" + streamurl + '&subtitle=' + data.subtitles[0].url ;
+        embed.src = "player/index.html?video=" + streamurl + '&subtitle=' + data.subtitles[0].url ;
         document.body.appendChild(embed);
       } else {
         console.log("No valid sources found. :(");
