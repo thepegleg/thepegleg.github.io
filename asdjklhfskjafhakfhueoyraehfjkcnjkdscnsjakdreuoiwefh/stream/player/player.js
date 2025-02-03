@@ -20,7 +20,6 @@ function playM3u8(url, sub) {
         video.volume = 0.3;
         document.title = url;
     }
-    cap.src = sub
 }
 
 function playPause() {
