@@ -26,6 +26,8 @@ if (movid) {
         streamurl = validsources[0].url;
         const embed = document.createElement("embed");
         embed.frameborder = "0";
+        embed.width = "800";
+        embed.height = "450";
         embed.src = "player/index.html?video=" + streamurl + '&subtitle=' + data.subtitles[0].url ;
         document.body.appendChild(embed);
       } else {
