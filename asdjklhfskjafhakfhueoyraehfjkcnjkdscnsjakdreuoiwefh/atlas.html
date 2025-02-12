@@ -325,8 +325,8 @@ document.getElementById('jokes').innerHTML += jokes[Math.floor(Math.random() * j
                 }
             });
         }        // Add game assets from GitHub repos
-        addNewLinks(gameAssetsData, 'https://raw.githack.com/sebastian-92/game-assets/fixy', '~pegleg/3kh0');
-        addNewLinks(seleniteAssetsData, 'https://rawcdn.githack.com/sebastian-92/selenite1/f648efb8d13961a0042118584248e38d77d2f603', '~selenite');
+        addNewLinks(gameAssetsData, 'https://aibackend.cbass92.org/gh/sebastian-92/game-assets@fixy', '~pegleg/3kh0');
+        addNewLinks(seleniteAssetsData, 'https://aibackend.cbass92.org/gh/sebastian-92/selenite1@main/semag', '~selenite');
         // Add crazyitems links
         const crazyitems = [
     {
@@ -31948,7 +31948,7 @@ fetch("https://lite.3kh0.net/config/games.json")
   .then((data) => {
     data.forEach((project) => {
       const anchor = document.createElement('a');
-      anchor.href = 'https://rawcdn.githack.com/3kh0/3kh0-lite/d5cf6bb79a6427ada99e7f2e31425325f454565d/' + project.link;
+      anchor.href = 'https://aibackend.cbass92.org/gh/3kh0/3kh0-lite@main/' + project.link;
       anchor.textContent = project.title + `~3kh0lite`;
       anchor.style.display = 'block';
       newLinks.push(anchor);
